@@ -1,0 +1,23 @@
+package main.abstractionAndInterface.interfacing;
+
+/*interface ဆိုတာ class တစ္ခုရဲ႕ blue print တစ္ခုၿဖစ္တယ္
+ * static constants ေတြနဲ႔ abstract method မ်ားပါ၀င္တယ္
+ * interface ဆိုတာ abstraction မ်ားကို ရယူဖုိ႔ mechanism တစ္ခုၿဖစ္တယ္
+ * interface ထဲမွာဆိုရင္ေတာ့ method ေတြအကုန္လံုးက abstract method ေတြခ်ည္းပဲၿဖစ္တယ္
+ * abstraction နဲ႔ multiple inheritance,loose coupling  ရရွိဖို႔ သံုးပါတယ္
+ * interface ထဲမွာေၾကညာတဲ့ variable ေတြက public, static, final က default ပဲ
+ * method ေတြဆိုရင္လည္း abstract မထည့္ထားေပမယ့္လည္း abstract method ေတြပဲ
+ * 
+ * The relationship between classes and interfaces
+ * 		class to class -- extends
+ * 		interface to class -- implements
+ * 		interface to interface -- extends
+ * 
+ * Multiple inheritance in Java by interface
+ * 		class တစ္ခုက interface အမ်ားၾကီးကို implements လုပ္လို႔ရသလို 
+ * 		interface တစ္ခုက interface အမ်ားၾကီးကို extends လုပ္လို႔ရတယ္
+ * 
+ * */
+public class Introduction {
+
+}

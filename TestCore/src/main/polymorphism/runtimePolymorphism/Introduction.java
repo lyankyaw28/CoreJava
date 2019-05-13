@@ -1,0 +1,19 @@
+package main.polymorphism.runtimePolymorphism;
+
+/* concept တစ္ခု = a single action in different ways
+ * poly is many and morphs is forms so this means many forms.
+ * 
+ * Types of polymorphism
+ * 		1.compile time polymorphism
+ * 		2.run time polymorphism
+ * 
+ * 	java မွာ polymorphism ဆိုတာကို method overloading and method overriding တို႔နဲ႔လုပ္ေဆာင္လို႔ရတယ္
+ * Runtime polymorphism  ကို 	Dynamic Method Dispatch လို႔လဲေခၚတယ္
+ * Upcasting ဆိုတာက  reference variable of Parent class refers to the object of Child class
+ * 		Parent p=new Child();
+ * 
+ * 
+ * */
+public class Introduction {
+
+}
