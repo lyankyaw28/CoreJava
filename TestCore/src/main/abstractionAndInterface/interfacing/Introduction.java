@@ -17,6 +17,23 @@ package main.abstractionAndInterface.interfacing;
  * 		class တစ္ခုက interface အမ်ားၾကီးကို implements လုပ္လို႔ရသလို 
  * 		interface တစ္ခုက interface အမ်ားၾကီးကို extends လုပ္လို႔ရတယ္
  * 
+ * 
+ * important point(Difference between abstract class and interface)
+ * 			abstract class ေရာ interface ေရာမွာ abstract method မ်ားကို အသံုးၿပဳႏိုင္ရန္သံုးတယ္
+ * 			ႏွစ္ခုလံုးကို instantiated လုပ္လို႔မရဘူး
+ * 
+ * 			1.abstract မွာ abstract method ေရာ ရိုးရိုး method ေတြေရာပါရွိႏိုင္
+ * 				interface မွာက abstract method ေတြပဲ ရွိမယ္ java 8 မွာၾကေတာ့ default method နဲ႔ static method 
+ * 				မ်ားကိုလည္း သံုးႏုိင္လာတယ္
+ * 			2.abstract က multiple inheritance ကို support မလုပ္ပါ
+ * 				interface က multiple inheritance ကို support လုပ္တယ္
+ * 			3.abstract class မွာက final,non-final,static နဲ႔ non-static variable ေတြရွိႏိုင္
+ * 				interface မွာက final နဲ႔ static variable မ်ားသာရွိႏိုင္
+ * 			4.abstract class ေတြက implementation of interface ကို ေပးႏိုင္တယ္
+ * 				interface ေတြက implementation of abstract ကို မေပးႏုိုင္ဘူး
+ * 			
+ * 				
+ * 			
  * */
 public class Introduction {
 
