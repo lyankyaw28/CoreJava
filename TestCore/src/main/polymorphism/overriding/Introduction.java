@@ -7,7 +7,7 @@ parent class ထဲမွာလို subclass မွာ same method ကို d
 		 1.to provide the specific implementation of a method which is already provided by its superclass.
 		 	(သူ႕ရဲ႕parent ေတြရဲ႕ method အတိုင္းမေရးဘဲ ၿပဳၿပင္ေၿပာင္းလဲၿပီး ေရးၿခင္တဲ့အတြက္ အသံုးၿပဳရၿခင္းၿဖစ္တယ္
 		 2.runtime polymorphism
-		 
+		 dfdgdgfsdgsd
 	Rules
 		1.Same method name with parent class method.
 		2.Same parameters with parent class method.
