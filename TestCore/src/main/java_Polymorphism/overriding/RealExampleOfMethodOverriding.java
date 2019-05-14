@@ -26,7 +26,7 @@ class AXIS extends Bank {
 }
 
 public class RealExampleOfMethodOverriding {
-	public static void main(String [] args) {
+	public static void main(String[] args) {
 		SBI s = new SBI();
 		ICICI i = new ICICI();
 		AXIS a = new AXIS();

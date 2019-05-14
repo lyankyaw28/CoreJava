@@ -25,13 +25,13 @@ class LionPolymorphism extends AnimalPolymorphism {
 }
 
 public class AnimalOfJavaRuntimePolymorphism {
-	public static void main(String[] args){  
-		AnimalPolymorphism a;  
-		a=new DogPolymorphism();  
-		a.eat();  
-		a=new CatPolymorphism();  
-		a.eat();  
-		a=new LionPolymorphism();  
-		a.eat();  
-		}
+	public static void main(String[] args) {
+		AnimalPolymorphism a;
+		a = new DogPolymorphism();
+		a.eat();
+		a = new CatPolymorphism();
+		a.eat();
+		a = new LionPolymorphism();
+		a.eat();
+	}
 }

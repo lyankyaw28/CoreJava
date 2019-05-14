@@ -1,0 +1,25 @@
+java မွာ ၂ မ်ိဳး ရွိတယ္
+	1.access modifier
+	2. non access modifier
+
+access modifier က ဘာလုပ္လဲဆိုေတာ့ data member တို႔ method တို႔ constructor or class ေတြကို scope သတ္မွတ္ေပးဖို႔ပါ
+	1.private
+	2.default
+	3.protected
+	4.public
+	
+non access modifier ေတြကေတာ့ အမ်ားၾကီးရွိတယ္
+	အသံုးမ်ားတာကေတာ့ static နဲ႔ abstract 
+	
+1.private 
+	သူက class ထဲက ေကာင္ေတြကို သူ႕class အၿပင္ကေန ေခၚသံုးလို႔မရ
+	constructor မွာ private သံုးရင္ေတာ့ object ေဆာက္တာနဲ႔ compile error တက္မွာပဲ
+2.default 
+	default ဆိုရင္ေတာ့ သူ႕ package အတြင္း ယူသံုးလို႔ရမယ္
+3.protected
+	protected ကေတာ့ package အတြင္းမွာေရာ အၿပင္ကေရာသံုးလို႔ရတယ္ ဒါေပမယ့္ inheritance ၿဖစ္ေနဖို႔ေတာ့လိုတယ္
+	သူကိုေတာ့ data member တို႔ method တို႔ constructor တို႔ အသံုးၿပဳလို႔ရၿပီးေတာ့ class မွာေတာ့ သံုးလို႔မရဘူး
+	parent class မွာ protected ေၾကညာထားတာကို subclass က method overriding သြားေရးရင္ compile time error တက္ႏိုင္တယ္
+4.public
+	public ကေတာ့ ၾကိဳက္တဲ့ေနရာကမဆို ယူသံုးႏိုင္တယ္
+	

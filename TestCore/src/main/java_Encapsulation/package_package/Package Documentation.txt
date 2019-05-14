@@ -1,0 +1,25 @@
+package မွာက ၂ မ်ိဳး ရွိတယ္
+	1.built in package
+	2.user defined package
+
+	1.Built-in package က အမ်ိဳးအစားမ်ားစြာ ရွိတယ္
+		ex.java,lang,awt 
+	
+	package ရဲ႕ေကာင္းက်ိဳး
+		1.တူရာတူရာစုထားလို႔  maintain လုပ္ရတာလြယ္ကူ
+		2.access modifier production ကို ေပးစြမ္း
+		3.name တူၿခင္းမ်ားကိုလည္း ေရွာင္လႊဲေပးႏိုင္တယ္
+		
+java package ဘယ္လို compile လုပ္သလဲ
+	To compile: javac -d . Simple.java (javac ဆိုတာက switch တစ္ခုၿဖစ္ၿပီးေတာ့ class file ကို ဘယ္ေနရာမွာထားရမလဲဆိုတာကို ေၿပာၿပေပးတယ္
+													. ဆိုတာက current folder ကိုရည္ညႊန္းတယ္)
+	To run: java mypack.Simple
+	
+class file သို႔မဟုတ္ jar file ကို ဆြဲတင္ေသာနည္းလမ္းမ်ား
+	အဲ့လိုဆြဲတင္တာမွာ temporary နဲ႔ permanent ဆိုၿပီး ၂ မ်ိဳးရွိတယ္
+	1.Temporary
+		1.1.setting the classpath in the command prompt
+		1.2.By -classpath switch
+	2.Permanent
+		2.1.environment variables ထဲမွာ class path ကို သြားထည့္လိုက္တာ
+		2.2.jar file တစ္ခုကို create လုပ္မယ္ အဲ့ jar file ထဲမွာ class files အားလံုးပါလာၿပီးေတာ့ အဲ့ jar file ကို  jre/lib/ext folder ထဲမွာ copy ကူးထည့္ထားလိုက္တယ္

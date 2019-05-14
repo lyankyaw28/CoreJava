@@ -19,9 +19,9 @@ class Cat extends Animal1 {
 }
 
 public class HierarchicalInheritanceExample {
-public static void main(String[] args) {
-	Cat c= new Cat();
-	c.meow();
-	c.eat();
-}
+	public static void main(String[] args) {
+		Cat c = new Cat();
+		c.meow();
+		c.eat();
+	}
 }
