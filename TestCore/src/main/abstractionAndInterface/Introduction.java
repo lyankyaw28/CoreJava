@@ -1,4 +1,4 @@
-package main.abstractionAndInterface.interfacing;
+package main.abstractionAndInterface;
 
 /*interface ဆိုတာ class တစ္ခုရဲ႕ blue print တစ္ခုၿဖစ္တယ္
  * static constants ေတြနဲ႔ abstract method မ်ားပါ၀င္တယ္
@@ -31,6 +31,20 @@ package main.abstractionAndInterface.interfacing;
  * 				interface မွာက final နဲ႔ static variable မ်ားသာရွိႏိုင္
  * 			4.abstract class ေတြက implementation of interface ကို ေပးႏိုင္တယ္
  * 				interface ေတြက implementation of abstract ကို မေပးႏုိုင္ဘူး
+ * 			5.a္္bstract class တစ္ခုက java class မ်ားစြာကို extend လုပ္ႏိုင္သလို interfaces မ်ားကိုလည္း implements လုပ္ႏိုင္တယ္
+ * 				interface ေတြကေတာ့ အၿခား interface တစ္ခုတည္းကိုပဲ implements လုပ္ႏိုင္တယ္
+ *			7.abstract class က extend ကို သံုးတယ္
+ *				interface က implements ကို သံုးတယ္
+ *			8.abstract class မွာ class member မ်ားစြာရွိတယ္ ဥပမာ private, protected 
+ *				interface မွာေတာ့ public တစ္ခုတည္းပဲရွိတယ္
+ *			9.Syntax difference
+					public abstract class Shape{
+						public abstract void draw();
+					}
+					
+					public interface Drawable{
+						void draw();
+					}
  * 			
  * 				
  * 			

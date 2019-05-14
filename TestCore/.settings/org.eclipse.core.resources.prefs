@@ -1,7 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/main/abstractionAndInterface/Introduction.java=UTF-8
 encoding//src/main/abstractionAndInterface/abstraction/Introduction.java=UTF-8
-encoding//src/main/abstractionAndInterface/interfacing/Introduction.java=UTF-8
 encoding//src/main/abstractionAndInterface/interfacing/defaultMethodInInterface/TestInterfaceDefault.java=UTF-8
+encoding//src/main/abstractionAndInterface/interfacing/differenceInterfaceAbstract/Test5.java=UTF-8
 encoding//src/main/abstractionAndInterface/interfacing/interfaceInheritance/InterfaceInheritance.java=UTF-8
 encoding//src/main/abstractionAndInterface/interfacing/staticMethodInInterface/TestInterfaceStatic.java=UTF-8
 encoding//src/main/aggregation/Introduction.java=UTF-8
