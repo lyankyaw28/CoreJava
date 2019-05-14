@@ -1,0 +1,8 @@
+Point of Remember
+	1.abstract keyword ပါကိုပါရမယ္
+	2.abstract method ေရာ non abstract method ေရာပါ၀င္ႏိုင္တယ္
+	3.instantiated လုပ္လို႔မရပါ
+	4.constructor and static method မ်ားလည္း ပါ၀င္ႏိုင္တယ္
+	5.final method မ်ားရွိႏိုင္သလို ထို method မ်ားကို သူ႕အား extend လုပ္ထားေသာ subclass မ်ားကို method body ကို ၀င္ၿပင္လို႔မရႏိုင္
+	
+abstract method တစ္ခုရွိရင္ေတာင္ အဲ့ class က abstract ၿဖစ္သြားၿပီ
