@@ -2,7 +2,7 @@ package main.abstractionAndInterface.abstraction;
 
 /*
  * 
- * ဘယ္လိုနည္းလမ္းေ�?ြလဲ သံုးလို႔ရ�?ိုင္သလဲ
+ * ဘယ္လိုနည္းလမ္းေ�?ြလဲ သံုးလို႔ရ�?ိုင္သလဲႏ
  * 		1.Abstract class (0 to 100%)
  * 		2.Interface (100%)
  * 
