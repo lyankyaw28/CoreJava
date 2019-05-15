@@ -1,25 +1,15 @@
-java မွာ ၂ မ်ိဳး ရွိတယ္
-	1.access modifier
-	2. non access modifier
+Encapsulation in Java is a process of wrapping code and data together into a single unit
+	capsule တစ္ခုထဲမွာ ေဆးေပါင္းမ်ားစြာ ပါ၀င္သလိုပဲ
 
-access modifier က ဘာလုပ္လဲဆိုေတာ့ data member တို႔ method တို႔ constructor or class ေတြကို scope သတ္မွတ္ေပးဖို႔ပါ
-	1.private
-	2.default
-	3.protected
-	4.public
+java မွာ fully encapsulated class တစ္ခုကို ဖန္တီးလို႔ရတယ္ private data member ေတြကို သံုးၿပီးေတာ့
+အဲ့ဒီမွာ getter နဲ႔ setter ထည့္မယ္
+
+ေကာင္းက်ိဳး
+	getter တစ္ခုပဲထည့့္မလား setter တစ္မ်ိဳးပဲထည့္မလားေပၚမူတည္ၿပီး class ကို read only လား write only လားဆိုၿပီး ေရးလို႕ရတယ္
+	အဲ့ getter setter ေတြကို မေရးလဲရတယ္
 	
-non access modifier ေတြကေတာ့ အမ်ားၾကီးရွိတယ္
-	အသံုးမ်ားတာကေတာ့ static နဲ႔ abstract 
-	
-1.private 
-	သူက class ထဲက ေကာင္ေတြကို သူ႕class အၿပင္ကေန ေခၚသံုးလို႔မရ
-	constructor မွာ private သံုးရင္ေတာ့ object ေဆာက္တာနဲ႔ compile error တက္မွာပဲ
-2.default 
-	default ဆိုရင္ေတာ့ သူ႕ package အတြင္း ယူသံုးလို႔ရမယ္
-3.protected
-	protected ကေတာ့ package အတြင္းမွာေရာ အၿပင္ကေရာသံုးလို႔ရတယ္ ဒါေပမယ့္ inheritance ၿဖစ္ေနဖို႔ေတာ့လိုတယ္
-	သူကိုေတာ့ data member တို႔ method တို႔ constructor တို႔ အသံုးၿပဳလို႔ရၿပီးေတာ့ class မွာေတာ့ သံုးလို႔မရဘူး
-	parent class မွာ protected ေၾကညာထားတာကို subclass က method overriding သြားေရးရင္ compile time error တက္ႏိုင္တယ္
-4.public
-	public ကေတာ့ ၾကိဳက္တဲ့ေနရာကမဆို ယူသံုးႏိုင္တယ္
-	
+	အဲ့လိုနည္းလမ္းက မငး္က data ေတြကို ထိန္းခ်ဳပ္ႏိုင္တယ္
+	ဥပမာ ကိုယ္က a ဆိုတဲ့ variable ကို 100 ထက္ၾကီးတာေတြပဲ လိုခ်င္တယ္ဆိုရင္
+	သူ႕ရဲ႕ setter ထဲမွာ logic ေကာက္ေရးလိုက္လို႔ရတယ္
+	အဲ့တာကို data hiding လို႔ေခၚတယ္ ဘာလုိ႔လဲဆိုေတာ့ တစ္ၿခား class က သူ႕ရဲ႕data member ေတြကတစ္ဆင့္ access လုပ္လို႔မရလို႕
+	ၿပီးေတာ့ encapsulate class ေတြက test လုပ္ရတာလဲ လြယ္ကူတယ္ အဲ့တာက unit testing ထက္ပိုေကာင္းပါတယ္

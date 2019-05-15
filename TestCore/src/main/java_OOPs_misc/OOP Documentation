@@ -1,0 +1,81 @@
+Object class ဆိုတာ java class အားလံုးရဲ႕ parent class ၿဖစ္တယ္
+
+Method of Object class
+ method ေတြမ်ားစြာရွိတယ္
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Object Cloning in Java
+	object cloning ဆိုတာ object တစ္ခုကို အလံုးစံု copy ကူးဖို႔ နည္းလမ္းတစ္ခုၿဖစ္တယ္
+	အဲ့လို clone method  ကို သံုးမယ္ဆိုရင္  java.lang.Cloneable ဆိုတဲ့ interface ကို implements လုပ္ေပးရမယ္
+	ေနာက္မို႔ဆိုCloneNotSupportedException တက္လိမ့္မယ္ ဒါေၾကာင့္ အဲ့ exception ကို ပစ္ဖို႔ လိုလိမ့္မယ္
+	
+	ဘာလို႔သံုးလဲဆိုေတာ့ new keyword ကိုသံုးၿပီး object အသစ္ေတြေစာင့္ေနမယ္ဆိုရင္ performance ကို ထိႏိုင္တယ္
+	
+ေကာင္းက်ိဳး
+	1.code ေတြအမ်ားၾကီးေရးေနစရာမလိုဘူး interface တစ္ခုကို implements လုပ္ၿပီး code ေလးငါးေၾကာင္းေရးလိုက္တာနဲ႔ အဆင္ေၿပတယ္
+	2.old project တို႔ ရွိၿပီးသား development ေတြပိုအဆင္ေၿပတယ္ parent class တစ္ခုေၾကညာ interface ကို implements လုပ္ method ေလးလွမ္းေခၚလိုက္တာနဲ႔
+		task တစ္ခုက ၿပီးသြားလိမ့္မယ္
+	2.clone() ဆိုတဲ့ method က array တစ္ခုကို copy ကူးတာမွာ အၿမန္ဆံုးနည္းပဲ
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Math class
+	သူကေတာ့ ရိုးရိုးပဲ math နဲ႔ သက္ဆိုင္တဲ့ operation ေတြလုပ္ေဆာင္တဲ့ သူ႕ထဲက method ေတြကို သံုးတယ္
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Wrapper class
+	wrapper class ဆိုတာက primitive ကေန object သို႔မဟုတ္ object ကေန primitive ကိုေၿပာင္းတဲ့ mechanism တစ္ခုၿဖစ္တယ္
+	j2se 5 မွာကတည္းက autoboxing နဲ႔ unboxing feature ေတြက အဲ့လိုမ်ိဳး auto ေၿပာင္းလဲေပးႏိုင္တယ္
+	java.lang. package ထဲမွာ wrapper class 8 ခုရွိတယ္
+	1.Boolean 2.Character 3.Byte 4.Short 5.Integer 6.Long 7.Float 8.Double
+		primitive ကေန wrapper ကိုေၿပာင္းရင္ autoboxing ၿဖစ္တယ္
+		wrapper ကေန primitive ကိုေၿပာင္းရင္ unboxing ၿဖစ္တယ္
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Recursion in Java
+	Recursion ဆိုတာက ကိုယ့္method body ထဲမွာ ကိုယ့္ method name ကိုၿပန္ေခၚတာကို ဆိုလိုသည္
+	အဲ့လို ကိုယ့္ method ကို ကိုယ္ၿပန္ေခၚတာကို recursive method လို႔ေခၚတယ္
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Call by Value and Call by Reference
+	1.Call By Value
+	value သီးသန္႔ယူတာၿဖစ္တယ္ reference အားၿဖင့္ယူၿခင္း မဟုတ္ဘူး
+	method အတြင္းမွာေတာ့ ေၿပာင္းလဲသြားတယ္ ဒါေပမယ့္ class ထဲက တကယ့္ variable ထဲမွာေတာ့ တန္ဖိုးေၿပာင္းလဲၿခင္းမရွိ
+	
+	2.Call By Reference
+	method ထဲမွာ value ကို ေၿပာင္းလဲသြားခ်င္တယ္ဆိုရင္ method အတြင္းထဲမွာ value ကိုမယူပဲ obj reference ကို ယူရလိမ့္မယ္
+	သို႔မွသာ value က ေၿပာင္းလဲလိမ့္မယ္
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java Command Line Arguments
+	java program run ေနစဥ္မွာ console မွ ရိုက္ထည့္လိုက္ေသာ arguments မ်ားၿဖစ္သည္ program ရဲ႕ behavior ကို စစ္ဖို႔ေကာင္းမြန္တဲ့ နည္းလမ္းၿဖစ္တယ္
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	 
+Difference between object and class
+	1.instance of a class
+		template
+	
+	2.real world entity eg.laptop mobile keyword
+		group of similar objects
+		
+	3.physical entity
+		logical entity
+		
+	4.new keyword
+		class keyword
+		
+	5.many time created
+		one time created
+		
+	6.allocate memory when it is created
+		doesn't allocated memory when it is created.
+
+	7.many ways to create object(new keyword, newInstance() method, clone() method, factory method and deserialization)
+		one way to define class
+	
+	Example:Class: Human Object: Man, Woman
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Difference between method overloading and method overriding in java
+		1.program ကို ဖတ္တာပိုၿမန္ေအာင္ သံုးတာ
+			သူ႕ရဲ႕ parent ဆီက specific implementation ကို လုပ္ႏိုင္ေအာင္ အသံုးၿပဳၿခင္းၿဖစ္တယ္
+			
+		2.class အတြင္းထဲမွာ လုပ္ေဆာင္
+			class ႏွစ္ခုအတြင္းမွာ လုပ္ေဆာင္ ဘာလို႔လဲဆိုေတာ့ inheritance ေၾကာင့္
+			
+		3.parameter difference
+			parameter are the same
+			
+		4.method overloading မွာ return type က တူလို႔လည္း ရသလို မတူလည္း ရတယ္ parameter မတူရင္ ၿပီးေရာ
+			method overriding မွာ return type က တူကို တူရမယ္

@@ -1,0 +1,53 @@
+Java Array ဆိုတာက တူညီတဲ့အမ်ိဳးအစားေတြ စုေပါင္းထားတဲ့ collection တစ္ခုၿဖစ္ပါတယ္
+သူက object တစ္ခုၿဖစ္ၿပီးေတာ့  Data type တူညီတဲ့ element မ်ားပါ၀င္တယ္
+index based ၿဖစ္ၿပီးေတာ့ 0 ခန္းက စတယ္
+
+ေကာင္းက်ိဳး
+	1.Code Optimization: Data သြင္းတာ sort လုပ္တာမ်ိဳးေတြကို ထိထိေရာက္ေရာက္လုပ္ႏိုင္တယ္
+	2.Random access: index position တစ္ခုမွာ မည္သည့္ data ကို မဆို သိမ္းဆည္းႏိုင္တယ္
+	
+ဆိုးက်ိဳး
+	Size Limit: fix sized ရွိတဲ့ data ေတြကိုပဲ သိမ္းလု႔ိရမယ္ ဘာလို႔လဲဆုိေတာ့ runtime ေရာက္ရင္ array က ပိုၾကီးလာမွာ မဟုတ္ဘူး
+					အဲ့ၿပသနာကို ေၿဖရွင္းဖို႔အတြက္ collection framework ကို သံုးၾကတာၿဖစ္တယ္
+	
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+Two Type of Array
+	1.Single Dimensional Array
+	2.Multidimensional Array
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+1.Single Dimensional Array
+	dataType[] arr; (or)  
+	dataType []arr; (or)  
+	dataType arr[];  
+	
+Instantiation of an Array in Java
+	arrayRefVar=new datatype[size];  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------		
+ArrayIndexOutOfBoundsException
+	length of array က array size ထက္ၾကီးေနတာပဲၿဖစ္ၿဖစ္ ညီေနတာပဲၿဖစ္ၿဖစ္ ၿဖစ္ခဲ့မယ္ဆိုရင္ JVM က အဲ့exception ကိုလွမ္းပစ္ေလ့မယ္
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+Multidimensional Array
+	syntax:  dataType[][] arrayRefVar; (or)  
+				dataType [][]arrayRefVar; (or)  
+				dataType arrayRefVar[][]; (or)  
+				dataType []arrayRefVar[]; 
+	Example to instantiate Multidimensional Array in Java: 
+		int[][] arr=new int[3][3]; 
+	 initialize Multidimensional Array 
+	 	arr[0][0]=1;  
+		arr[0][1]=2;  
+		arr[0][2]=3;  
+		arr[1][0]=4;  
+		arr[1][1]=5;  
+		arr[1][2]=6;  
+		arr[2][0]=7;  
+		arr[2][1]=8;  
+		arr[2][2]=9;  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Copying a Java Array
+	array တစ္ခုကို arraycopy() ဆိုတဲ့ method နဲ႔ copy ကူးလို႔ရတယ္
+	
+Syntax of arraycopy method
+	public static void arraycopy(  
+		Object src, int srcPos,Object dest, int destPos, int length  
+	)  

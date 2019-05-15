@@ -26,12 +26,12 @@ class Triangle extends Shape {
 
 public class ShapeOfJavaRuntimePolymorphism {
 	public static void main(String args[]) {
-		Shape s;
-		s = new Rectangle();
-		s.draw();
-		s = new Circle();
-		s.draw();
-		s = new Triangle();
-		s.draw();
+		Shape s [] = new Shape[3];
+		s[0] = new Rectangle();
+		s[1] = new Circle();
+		s[2] = new Triangle();
+		s[0].draw();
+		s[1].draw();
+		s[2].draw();
 	}
 }
