@@ -1,0 +1,214 @@
+String Definition
+	java ဆိုတာ char values မ်ားရဲ႕ sequence ကို ကိုယ္စားၿပဳတဲ့ object တစ္ခုၿဖစ္တယ္
+	string object တစ္ခုေဆာက္တိုင္း java.lang.string ဆိုတဲ့ class ကို သံုးပါတယ္
+ex
+	char[] ch={'j','a','v','a','t','p','o','i','n','t'};  
+	String s=new String(ch);  
+is same as: 
+	String s="javatpoint";  
+	
+string class မွာ method မ်ားစြာ ရွိတယ္  compare(), concat(), equals(), split(), length(), replace(), compareTo(), intern(), substring() 
+
+java.lang.string class က Serializable, Comparable and CharSequence ဆိုတဲ့ interface မ်ားကို implements လုပ္ထားတယ္
+	CharSequence Interface က char sequence မ်ားကို သံုးႏိုင္ဖို႔ implements လုပ္ထားတယ္
+	အဲ့ interface ကို string,stringBuffer,stringBuilder ဆိုတဲ့ class ၃ ခုက implements လုပ္ထားတယ္
+	
+ဘယ္လို ဖန္တီးသလဲ
+	နည္းလမ္း ၂ မ်ိဳးရွိတယ္
+		1. string literal
+		2.new keyword
+
+1.String Literal
+	ဒီေကာင္ကို သံုးခ်င္ရင္ double quotes နဲ႔ သံုးေပးရမယ္
+	String s="welcome";  
+	String literal တစ္ခုေၾကညာလိုက္ၿပီဆိုတာနဲ႔ jvm က string constant pool ထဲကို သြားၾကည့္တယ္
+	အဲ့ string က ရွိၿပီးသားဆိုရင္ ရွိၿပီးသား instance ကိုပဲ return ၿပန္ေပးလိမ့္မယ္
+	မရွိဘူးဆိုရင္ေတာ့ pool ထဲမွာ instance အသစ္ေဆာက္လိမ့္မယ္
+	String s1="Welcome";  
+	String s2="Welcome";//It doesn't create a new instance  
+	
+	ဘာလို႔သံုးလဲဆိုေတာ့ memory သက္သာေအာင္လို႔ object အသစ္ေဆာက္စရာမလိုရင္ မေဆာက္ပဲ constant pool ထဲက ေကာင္ကိုပဲ သံုးတဲ့အတြက္ေၾကာင့္မို႔လို႔ပါ
+-----------------------------------------------------------------------------------------------
+2.By new keyword
+	ဒီေကာင္က်ေတာ့ no pool ေပါ့  heap memory မွာေနရာယူတာ
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Immutable String in Java
+		string object ေတြက ၿပင္လို႔မရဘူး အဲ့တာကို immutable လို႔ေခၚတယ္
+		လုိခ်င္ရင္ေတာ့ object အသစ္ေဆာက္လို႔ရတယ္
+		
+Immutable ကိုဘာလို႔သံုးလဲဆိုေတာ့ java က string literal ရဲ႕ concept ကို သံးုလို႔
+reference variables 5 ခုရွိတယ္ဆိုပါေတာ့ အဲ့ variable 5 ခုက "sachin" ဆိုတဲ့ string object တစ္ခုတည္းကိုပဲ refer ၀ိုင္းလုပ္ထားတယ္
+အဲ့ object value ကို reference variable တစ္ခုခုက change ခဲ့မယ္ ဆိုရင္ variable ၅ ခုစလံုးမွာ တန္ဖိုးေတြလုိက္ေၿပာင္းကုန္လိမ့္မယ္
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java String compare
+	1) String compare by equals() method
+		string equal method ဆိုတာက string ေတြရဲ႕ စာသားေတြကို ႏွိဳင္းယွဥ္ၿပီး true false ၿပန္ေပးတာၿဖစ္တယ္ အဲ့မွာ method 2 ခုရွိတယ္
+			1.public boolean equals(Object another)  ဒီက စာသားကို အတိအက်စစ္တယ္
+			2.public boolean equalsIgnoreCase(String another) ဒီေကာင္က်ေတာ့ အၾကီးအေသးကို မစစ္ဘူး
+		
+	2) String compare by == operator
+		== operator က value ကို reference လုပ္တာ မဟုတ္ဘူး
+		memory ရဲ႕ address ကို စစ္ၿပီး refer လုပ္ထားတာ တူရင္(literal) လိုမ်ိဳး true ၿပန္ၿပီး address မတူရင္ေတာ့ false ၿပန္
+		
+	3) String compare by compareTo() method
+		သူက အကၡရာကို လိုက္ၿပီး integer return ၿပန္ေပး
+		s1 == s2 :0
+		s1 > s2   :positive value
+		s1 < s2   :negative value
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+String Concatenation in Java
+	string ႏွစ္ခုကို တစ္ခုတည္းၿဖစ္ေအာင္ ဆက္ေပးတာ
+	နည္းလမ္း ၂ မ်ိဳးရွိတယ္
+		1.By + (string concatenation) operator
+		2.By concat() method
+		
+	1) String Concatenation by + (string concatenation) operator
+		plus sign နဲ႔ဆက္တာ
+	
+	2) String Concatenation by concat() method
+		ဒီ method က က်ေတာ့ first string ရဲ႕ အဆံုးမွာ second string ကို ကပ္ေပးလိုက္တာ
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Substring in Java
+			ဒီေကာင္ကို string ကေန sub string ေတြကို ၿဖတ္ထုတ္ဖို႔ အသံုးၿပဳတယ္ ေတာ္ေတာ္အသံုး၀င္ပါတယ္
+			method 2 ခု ရွိတယ္
+			 String s="SachinTendulkar";  
+  			 System.out.println(s.substring(6));//Tendulkar  
+   			System.out.println(s.substring(0,6));//Sachin  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java String class methods
+	Java String toUpperCase() and toLowerCase() method
+	အၾကီးအေသးေၿပာင္းတဲ့ method
+		String s="Sachin";  
+		System.out.println(s.toUpperCase());//SACHIN  အကုန္လံုးအၾကီးနဲ႔ထြက္မယ္္
+		System.out.println(s.toLowerCase());//sachin  အကုန္လံုးအေသးနဲ႔ထြက္မယ္
+		System.out.println(s);//Sachin(no change in original)  ပံုမွန္အတုိင္းပဲထြက္မယ္
+
+	Java String trim() method
+	ေရွ႕ space ေနာက္ space ၿဖတ္ထုတ္တဲ့ method
+		String s="  Sachin  ";  
+		System.out.println(s);//  Sachin    
+		System.out.println(s.trim());//Sachin 
+		
+	Java String startsWith() and endsWith() method
+	ေရွ႕ကဘာနဲ႔ဆံုးရင္ ဘာလုပ္ပါ ေနာက္ဆံုးက ဘာနဲ႔ဆံုးရင္ ဘာလုပ္ပါ စတဲ့ condition ေတြကိုလုပ္မယ္ဆိုရင္ သံုးမယ္
+		String s="Sachin";  
+	 	System.out.println(s.startsWith("Sa"));//true  
+	 	System.out.println(s.endsWith("n"));//true 
+	 	
+	 Java String charAt() method
+	 ဒီ method က char index ကို parameter ေပးလိုက္ရင္ အဲ့ေနရာမွာ ရွိတဲ့ char ကို return ၿပန္
+	 	String s="Sachin";  
+		System.out.println(s.charAt(0));//S  
+		System.out.println(s.charAt(3));//h  
+		
+	Java String length() method
+	string ရဲ႕မွာရွိတဲ့ character ေတြကို count ေရတြက္ခ်င္ရင္ ဒီ method ကိုသံုးလို႔ရတယ္
+		String s="Sachin";  
+		System.out.println(s.length());//6  
+		
+	Java String valueOf() method
+	int, long, float, double, boolean, char and char array စတဲ့ တစ္ၿခား data type မ်ားကို string ကိုေၿပာင္းလဲခ်င္ရင္ ဒီ method ကိုသံုး
+		int a=10;  
+		String s=String.valueOf(a);  
+		System.out.println(s+10);
+		
+	Java String replace() method
+	စာသားမ်ားကို အစားထိုးခ်င္တယ္ ဆိုရင္ ဒီ method ကို သံုးလို႔ရတယ္
+	parameter 2 ခုေပးရမယ္ ေရွ႕က အစားထိုးခံရမယ့္ေကာင္ ေနာက္က သူ႕ေနရာအစားထိုးမယ့္ေကာင္
+		String s1="Java is a programming language. Java is a platform. Java is an Island.";    
+		String replaceString=s1.replace("Java","Kava");//replaces all occurrences of "Java" to "Kava"    
+		System.out.println(replaceString); 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java StringBuffer class
+	stringbuffer ကို modifiable string ေတြဖန္တီးဖို႔သံုးပါတယ္ 
+	string class နဲ႔အတူတူပဲ မတူတာဆိုလို႔ ၿပင္လို႔ရတာနဲ႔ ၿပင္လို႔မရတာပဲ ကြာတယ္
+	string buffer က thread safe ၿဖစ္တယ္ 
+	
+	mutable string ဆိုတာ ဘာလဲ	
+		ၿပဳၿပင္ေၿပာင္းလဲလို႔ရေသာ စာသားမ်ားကို mutable string လုိ႔ေခၚတယ္ stringBuffer နဲ႔ stringBuilder ကို mutable string ေတြကို ဖန္တီးဖို႔ အသံုးၿပဳႏိုင္တယ္
+		
+		1) StringBuffer append() method
+			 append() method က သူ႕ကိုထည့္ေပးလိုက္တဲ့ parameter ေတြကို ဆက္ဖို႔အသံုးၿပဳတယ္
+		 	StringBuffer sb=new StringBuffer("Hello ");  
+			sb.append("Java");//now original string is changed  
+			System.out.println(sb);//prints Hello Java  
+				
+		2) StringBuffer insert() method
+			StringBuffer sb=new StringBuffer("Hello ");  
+			sb.insert(1,"Java");//now original string is changed  
+			System.out.println(sb);//prints HJavaello  
+			Java ကို index 1 ေနရာမွာ အစားထုိးလိုက္တယ္
+			
+		3)StringBuffer replace() method
+			start index နဲ႔ end index ကို ေပးလုိက္ရမယ္
+			StringBuffer sb=new StringBuffer("Hello");  
+			sb.replace(1,3,"Java");  
+			System.out.println(sb);//prints HJavalo  
+			
+		4) StringBuffer delete() method
+			start index နဲ႔ end index ေပးၿပီး ဖ်က္တာ
+			StringBuffer sb=new StringBuffer("Hello");  
+			sb.delete(1,3);  
+			System.out.println(sb);//prints Hlo  
+			
+		5) StringBuffer reverse() method
+			ေၿပာင္းၿပန္စာသားေပၚခ်င္ရင္ သံုးတယ္
+			StringBuffer sb=new StringBuffer("Hello");  
+			sb.reverse();  
+			System.out.println(sb);//prints olleH
+			
+		6) StringBuffer capacity() method
+			သူက capacity ကိုတြက္ထုတ္တဲ့ method
+			သူ႕ formula (oldcapacity*2)+2  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------			
+Java StringBuilder class
+	string builder ေတြကလည္း mutable အတြက္သံုးတာ
+	string buffer နဲ႔အတူတူပဲ ဒါေပမယ့္ non-synchronized ၿဖစ္တယ္ 
+		
+	method ေတြကို အသံုးၿပဳပံုက string buffer နဲ႔အတူတူၿဖစ္လို႔ မေရးေတာ့ပါ
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	Difference between String and StringBuffer
+		1.string က immutable ၿဖစ္တယ္(ၿပင္လို႔မရဘူး)
+			buffer က mutable ၿဖစ္တယ္(ၿပင္လို႔ရတယ္)
+			
+		2.string ေတြအမ်ားၾကီးကို concat  လုပ္ရင္ ေလးလာမယ္ ဘာလို႔လဲဆိုေတာ့ instance အသစ္ေတြကို memory မွာသြားသြားေဆာက္ေနလို႔
+			buffer ကေတာ့ memory နည္းနည္းပဲ ယူလို႔ ၿမန္တယ္
+			
+		3.object class ရဲ႕ equal method ကို override လုပ္ထားတဲ့အတြက္ string 2 ေၾကာင္းကို compare လုပ္လို႔ရတယ္
+			buffer ကေတာ့ equal method ကို override လုပ္မထားပါ
+			
+	performance ခ်င္းယွဥ္ရင္ေတာ့ buffer က ပိုေကာင္းတယ္
+	hashcode test မွာေတာ့ string က concast လုပ္ခင္နဲ႔မလုပ္ခင္ ၾကာခ်ိန္မတူဘူး
+	busffer ကေတာ့ ၾကာခ်ိန္က အတူတူပဲ		
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	Difference between StringBuffer and StringBuilder
+		String Buffer
+		1.string buffer က synchronized ၿဖစ္တယ္ (thread safe) ဆိုလိုတာက buffer ရဲ႕ method ေတြကို thread ႏွစ္ခုက တစ္ၿပိဳက္တည္းလွမ္းေခၚလို႔မရဘူး
+		2.string buffer က string builder ထက္ ေကာင္းက်ိဳးနည္းတယ္
+		
+		String Builder
+		1.string builder က non-synchronized ၿဖစ္တယ္(not thread safe) ဆိုလိုတာက builder ရဲ႕ method ေတြကို thread ႏွစ္ခုက တစ္ၿပိဳင္တည္းေခၚႏိုင္
+		2.string builder က string buffer ထက္ ေကာင္းက်ိဳးပိုမ်ားတယ္
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+How to create Immutable class?
+	Wrapper class ေတြအကုန္လံုးနဲ႔ string class က immutable class ေတြၿဖစ္ၾကတယ္
+	ဘယ္လိုေဆာက္ရမလဲဆိုေတာ့ class က final ၿဖစ္ရမယ္ data member ေတြကလည္း final ၿဖစ္ရမယ္
+	
+	ဘယ္လိုေတြေၿပာင္းလဲသြားလဲဆိုေတာ့
+	1.class member ေတြကလည္း final variable ေတြၿဖစ္တဲ့အတြက္ class ကို instance ယူၿပီးသြားရင္ class member ေတြရဲ႕ value ေတြကို change လို႔မရေတာ့ဘူး
+	2.class final ၿဖစ္တဲ့အတြက္ subclass ေဆာက္ခြင့္မရွိ
+	3.setter method မရွိေတာ့ဘူး ဘာၿဖစ္လို႔လဲဆိုေတာ့ class member ေတြက final ၿဖစ္ေနလို႔
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+ToString method
+	ဒီ method ကိုေရးၿခင္းအားၿဖင့္ object ထဲက data member ေတြကို ရိုက္ထုတ္ၿပီး ၾကည့္ႏိုင္တယ္
+	တကယ့္လို႔ မေရးထားဘူးဆိုရင္ object ကို output ရိုက္ထုတ္ပါက memory address ေတြပဲ ထြက္လာလိမ့္မယ္
+	ဒါေၾကာင့္ tostring method ကို override ေရးသင့္တယ္
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+StringTokenizer in Java
+	java.util.StringTokenizer class ကို string တစ္ေၾကာင္းကို token ေလးေတြအၿဖစ္ ဖ်က္ထုတ္တဲ့ေနရာမွာ အသံုးၿပဳပါတယ္
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reverse String ကိုဘယ္လိုေရးမလဲ
+	နည္းလမ္း ၂ မ်ိဳးနဲ႔ေရးလို႔ရတယ္
+	1.String Buffer or Builder ကိုသံုးၿပီး ready made ၿဖစ္ၿပီးသားၿဖစ္တဲ့ reverse ကိုယူသံုးတဲ့နည္း
+	2.String ကို char array ေၿပာင္းၿပီး char array ကို looping ေၿပာင္းၿပန္ပတ္ၿပီး ရိုက္ထုတ္တဲ့နည္း
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
