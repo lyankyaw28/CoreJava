@@ -38,3 +38,8 @@ concat() method အသံုးၿပဳပံု
 		Parameters: string တစ္ေၾကာင္း
 		Returns: ေပါင္းၿပီးသား string တစ္ေၾကာင္း
 		
+		ႏွစ္ေၾကာင္းမက အမ်ားၾကီးလည္းဆက္လို႔ရတယ္
+		space တို႔ special character တို႔နဲ႕လည္းဆက္လို႔ရတယ္
+		
+			
+		
