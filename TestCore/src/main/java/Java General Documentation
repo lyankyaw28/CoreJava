@@ -1,0 +1,89 @@
+Feature of Java
+	1.Simple
+	2.Object-Oriented
+	3.Portable
+	4.Platform independent
+	5.Secured
+	6.Robust
+	7.Architecture neutral
+	8.Interpreted
+	9.High Performance
+	10.Multithreaded
+	11.Distributed
+	12.Dynamic
+	
+	1.Simple
+		syntax ေတြက ရိုးရွင္းတဲ့အတြက္ ေလ့လာရတာလြယ္ကူတယ္
+			java ေတြရဲ႕ syntax က C++ ကိုအေၿခခံထားတယ္ 
+			java ကေတာ့ အသံုးနည္းၿပီး ရွဳပ္ေထြးတဲ့ features မ်ားကို ဖယ္ရွားလိုက္တယ္
+			java မွာက Automatic Garbage Collection ရွိပါတယ္
+			
+	2.Object-oriented
+		java က object-oriented programming language တစ္ခုၿဖစ္တယ္
+		java မွာ အရာရာက object ခ်ည္းပဲ
+		OOP ဆိုတာက methodology တစ္ခုၿဖစ္တယ္ သူက software development နဲ႔ maintenance ကိုလြယ္ကူေအာင္ သူ႕ရဲ႕ rule ေတြနဲ႔ ၿပဳလုပ္ေပးပါတယ္
+		Basic concepts of OOPs are:
+			1.Object
+			2.Class
+			3.Inheritance
+			4.Polymorphism
+			5.Abstraction
+			6.Encapsulation
+			
+	3.Platform Independent
+		java က platform independent ၿဖစ္တယ္ ဘာလို႔လဲဆိုေတာ့ တစ္ၿခား language မ်ားနဲ႔ ကြဲၿပားေနလို႔ like C, C++, etc
+		တစ္ၿခား language မ်ားက hardware base platform မ်ားၿဖစ္ၿပီးေတာ့ java ကေတာ့ software base platform ၿဖစ္တယ္
+		software base platform မွာက components ၂ မ်ိဳးရွိတယ္
+			1.Runtime Environment
+			2.API(Application Programming Interface)
+		java code က multiple platform မွာ run ႏိုင္တယ္ 
+		java compiler က java code မ်ားကို compile လုပ္ၿပီး bytecode မ်ားအၿဖစ္ ေၿပာင္းလဲလိုက္တယ္
+		bytecode ဆိုတာက platform-independent code ၿဖစ္တဲ့အတြက္ java က platform တိုင္းမွာ run လို႔ရတာၿဖစ္တယ္
+		
+	4.Secured
+		java ရဲ႕ အဓိကေကာင္းတဲ့အခ်က္က security ၿဖစ္တယ္
+		free virus system ပါ၀င္တယ္ 
+		java က ဘာလို႔ security ေကာင္းတာလဲဆိုေတာ့
+			1.No explicit pointer (pointer မ်ားက ရွဳပ္ေထြးတယ္)
+			2.Java Programs  က virtual machine sandbox ၾကီးတစ္ခုထဲမွာ run တာၿဖစ္တဲ့အတြက္
+			3.Classloader ဆိုတာက Java Runtime Environment(JRE) ရဲ႕ အစိတ္အပိုင္းတစ္ခုၿဖစ္တယ္
+				သူက ဘာလုပ္တာလဲဆိုေတာ့ java code ေတြကို Java Virtual Machine ၾကီးေပၚကို ဆြဲတင္ႏိုင္ဖို႔ လုပ္ေပးတယ္
+				သူက local file system ရဲ႕ java class မ်ားကို package ေလးေတြခြဲေပးၿခင္းအားၿဖင့္ security ကို လုပ္ေဆာင္ေပးတယ္
+				အဲ့အခ်က္က network ကေနတိုက္ခိုက္မွဳေတြကို အေတာ္အတန္သက္သာေစတယ္
+			5.Bytecode Verifier
+				Bytecode verifier ပါ၀င္တဲ့အတြက္ byte code ေတြကို စစ္ႏိုင္တယ္ 
+			6. Security Manager က ဘယ္ class ေတြက reading ရမယ္ ဘယ္ class ေတြက writing လုပ္ရမယ္ဆိုတာကို ဆံုးၿဖတ္ေပးတယ္
+		ဒါေတြကေတာ့ java မွာ default ပါ၀င္တဲ့ security system ေတြၿဖစ္ၿပီးေတာ့ developer ကလိုရင္လိုအပ္သလို အၿပင္က security မ်ားကိုလည္းထပ္ေပါင္းထည့္ၿပီး
+		သံုးႏိုင္ပါတယ္ SSL, JAAS, Cryptography, etc.
+				
+	5.Robust	
+		Robust ဆိုတာက strong ဆိုတဲ့သေဘာကိုေၿပာခ်င္တာၿဖစ္တယ္
+			1.strong memory management ကို အသံုးၿပဳတယ္
+			2.pointer မ်ားမရွိတဲ့အတြက္ security problem မ်ားကို မၿဖစ္ေအာင္ တားဆီးေပးတယ္
+			3.garbage collection က JVM ေပၚမွာ run တယ္ ဘာလို႔လဲဆိုေတာ့ run ေနစဥ္မွာ java object ေတြကို မရွိေစခ်င္လို႔ၿဖစ္တယ္
+			4.java မွာက exception handling နဲ႔ type checking mechanism ဆိုတာေတြရွိတယ္
+			
+	6.Architecture-neutral
+		dependent features မ်ားကို မွီခိုၿခင္းမရွိတဲ့အတြက္ၿဖစ္တယ္ ဥပမာ  the size of primitive types is fixed.
+		C Programming မွာဆိုရင္ int datatype က 32 မွာဆိုရင္ 2 byte 64 လည္းေရာက္ေရာ 4 ၿဖစ္သြားေရာ
+		java မွာေတာ့ 32 ၿဖစ္ၿဖစ္ 64 ၿဖစ္ၿဖစ္ 4 ပဲ
+		
+	7.Portable
+		ဘာလို႔လဲဆိုေတာ့ java က platform တိုင္းမွာ run လို႔ရတဲ့ bytecode မ်ားကို ထုတ္ေပးလို႔ပဲ
+		
+	8.High-performance
+		java က interpreted language ၿဖစ္တယ္ သူက interpreted language ေတြထဲမွာဆိုရင္ေတာ့ ေတာ္ေတာ္ေလးၿမန္တယ္လို႔ ဆိုႏိုင္တယ္
+		ဒါေပမယ့္ compiled languages, e.g., C, C++, etc. ထက္ေတာ့ နည္းနည္းေႏွးတယ္
+		
+	9.Distributed
+		Java application ေတြၿဖစ္တဲ့ RMI နဲ႔ EJB တို႔ကို distributed applications(online application) မ်ားဖန္တီးဖို႔ ၿပဳလုပ္ထားတဲ့ technologies မ်ားၿဖစ္တယ္
+		မည္သည့္ device ကမဆို online ရရင္ လွမ္းေခၚႏိုင္တယ္
+		
+	10.Multi-threaded
+			tasks မ်ားစြာကို တစ္ၿပိဳင္တည္းမွာ လုပ္ေဆာင္ၿခင္းကို multi-threaded လို႔ေခၚတယ္
+			multi-threaded ၿဖစ္တဲ့ အတြက္ thread တစ္ခုခ်င္းစီတိုင္းအတြက္ memory မစားေတာ့ဘူး
+			common memory area ကိုပဲ share ၿပီးသံုးၾကတယ္
+			
+	11.Dynamic
+		java က dynamic language တစ္ခုၿဖစ္တယ္ automatic memory management (garbage collection) ပါ၀င္ပါတယ္
+		
