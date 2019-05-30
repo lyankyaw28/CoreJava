@@ -1,0 +1,45 @@
+Inner Class 
+	Inner Class or Nested Class ဆိုတာက class ဒါမွမဟုတ္ interface တစ္ခုအတြင္းထဲမွာ ရွိတဲ့ class တစ္ခုကိုဆိုလိုသည္
+	တစ္စုတစ္စည္းတည္းၿဖစ္ေနတဲ့အတြက္ readable နဲ႔ maintainable ကိုပိုၿပီး ေကာင္းမြန္ေစတယ္
+	အဲ့ဒီ inner class က outer class ရဲ႕ private data members ေတြကိုေတာင္ access လုပ္လို႔ရတယ္
+	
+	Inner Class ရဲ႕ေကာင္းက်ိဳးမ်ား
+		၃ ခုရွိတယ္
+			1.private data members ေတြကိုေတာင္ access လုပ္လို႔ရတာၿဖစ္တဲ့အတြက္ special relation ကို ကိုယ္စားၿပဳတယ္
+			2.သူတို႔ကို class တစ္ခုတည္းတို႔ interfaces တစ္ခုတည္းတို႔မွာ ေရးထားတဲ့အတြက္ logically အရ readable နဲ႔ maintainable အရပိုေကာင္းတယ္
+			3.Code Optimization: ဆိုလိုတာက code နည္းနည္းပဲေရးဖို႔လိုလိမ့္မယ္
+		
+			
+	Nested class နဲ႔ Inner Class ရဲ႕ၿခားနားခ်က္
+		Inner Class ဆိုတာက Nested Class ရဲ႕အစိတ္အပိုင္းတစ္ခုၿဖစ္တယ္
+		
+		
+	Types of Nested Classes
+		၂ မ်ိဳးရွိတယ္
+			1.non static nested class
+			2.static nested class
+		non-static nested classes ကို inner class လို႔ေခၚတယ္
+			3 မ်ိဳးရွိတယ္
+				1.Member Inner Class
+				2.Anonymous Inner Class
+				3.Local Inner Class
+		
+			1.Member Inner Class	-  class အတြင္း method ရဲ႕အၿပင္
+			2.Anonymous Inner Class - interface တစ္ခုကို implement လုပ္ (ဒါမွမဟုတ္) class တစ္ခုကို extending လုပ္ဖို႔အတြက္ ဖန္တီးထားတဲ့ class တစ္ခု
+												သူ႕ရဲ႕ class name ကို java compiler က ဆံုးၿဖတ္တယ္
+			3.Local Inner Class - method အတြင္းထဲမွာ ဖန္တီးထားတဲ့ class
+			4.Static Nested Class - static nested class ကို class ထဲမွာဖန္တီးၿခင္းၿဖစ္တယ္
+			5.Nested Interface - interface တစ္ခုကို class သို႔မဟုတ္ interface တစ္ခုတည္းမွာ ဖန္တီးတယ္
+*****************************************************************************************************************
+1.Member inner class
+	non static class သူ႕ကို class ရဲ႕အတြင္း method ရဲ႕အၿပင္ဘက္မွာ ဖန္တီးတယ္
+	နားလည္ခ်င္ရင္ေတာ့ example ကိုပဲၾကည့္ရလိမ့္မယ္ note သိပ္မရွိ
+******************************************************************************************************************
+2.Anonymous inner class
+	နာမည္မရွိတဲ့ class ကို anonymous inner class လို႔ေခၚတယ္ 
+	class တစ္ခု သို႔မဟုတ္ interface တစ္ခုရဲ႕ method ကို override လုပ္ေရးမယ္ဆိုရင္ anonymous inner class ကို သံုးသင့္တယ္
+	anonymous inner class ကို နည္းလမ္း ၂ မ်ိဳး နဲ႔ ဖန္တီးႏိုင္တယ္
+		1.Class
+		2.Interface
+		
+		

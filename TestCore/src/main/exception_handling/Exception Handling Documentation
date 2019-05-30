@@ -166,3 +166,8 @@ Java Exceptions Index
 			6.super class က exception ကို declare လုပ္ထားမယ္ child class က exception ကို declare မလုပ္ထားဘူးဆိုရင္ parent class ရဲ႕ method က
 			အလုပ္လုပ္လိမ့္မယ္
 			
+****************************************************************************************************************
+	11.Custom Exception
+		exception တစ္ခုကို ကုိယ့္ဟာကိုယ္ဖန္တီးရင္ custom exception or user-defined exception လို႔ေခၚတယ္
+		
+			
