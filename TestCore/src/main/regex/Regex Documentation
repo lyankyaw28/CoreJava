@@ -1,0 +1,13 @@
+Java Regex ဆိုတာက Regular Expression ကိုေခၚတာပဲ
+strings မ်ားကို searching or manipulating လုပ္ဖို႔အတြက္ a pattern တစ္ခုသတ္မွတ္ေပးရန္သံုးတဲဲ့ API တစ္ခုၿဖစ္တယ္
+Java Regex API က interfaces 1 ခုနဲ႔ class 3 ခုေပးတယ္
+
+java.util.regex package
+	The Matcher and Pattern classes ေတြက  Java regular expression ရဲ႕ facility မ်ားကို ေပးပါတယ္
+	 java.util.regex package ကေပးတဲ့ class နဲ႔ interface ေတြကေတာ့
+		1.MatchResult interface
+		2.Matcher class
+		3.Pattern class
+		4.PatternSyntaxException class
+		
+

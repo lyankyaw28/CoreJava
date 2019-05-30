@@ -1,0 +1,168 @@
+Exception Handling Defination
+	runtime error ေတြကို handle လုပ္ဖို႔အတြက္ mechanism တစ္ခုၿဖစ္တယ္
+	
+Exception ဆိုတာဘာလဲ
+	Exception ဆိုတာက normal မဟုတ္တဲ့ အေၿခအေနတစ္ခုၿဖစ္တယ္
+	program တစ္ခုရဲ႕ normal flow ကို ေႏွာင့္ယွက္ေနတဲ့ event တစ္ခုလည္းၿဖစ္တယ္
+	သူက object တစ္ခုၿဖစ္ၿပီးေတာ့ runtime မွာ thrown လုပ္ပစ္ရမယ္
+	
+Exception Handling ရဲ႕ေကာင္းတဲ့အခ်က္ေတြ
+	program ရဲ႕ normal flow ကိုထိန္းထားလို႔ရတယ္
+	exception ကိုေတြ႕ရင္ ေတြ႕တဲ့ statement မွာပဲ ရပ္သြားေရာ ေရွ႕က process ေတြကိုဆက္ၿပီး အလုပ္မလုပ္ေတာ့ဘူး
+	
+Java Exception hierarchy
+	Java Exception hierarchy မွာ  java.lang.Throwable class က root class တစ္ခုၿဖစ္ၿပီး သူ႕ကို subclass ၂ ခုက inheritance လုပ္ထားတယ္
+	Exception class နဲ႔ error class
+	
+Types of Java Exceptions
+	အဓိကကေတာ့ ၂ မ်ိဳးပဲ ရွိတယ္
+	oracle ရဲ႕အဆိုအရဆိုရင္ေတာ့ ၃ မ်ိဳးရွိတယ္
+		1.checked exception
+		2.unchecked exception
+		3.error
+
+Checked နဲ႔ Unchecked Exceptions ရဲ႕ၿခားနားခ်က္
+	1) Checked Exception
+		compile time မွာ checked ရင္ checked exception ၿဖစ္တယ္
+		e.g. IOException, SQLException etc. 
+		
+	2) Unchecked Exception
+		run time မွာ checked ရင္ unchecked exception ၿဖစ္တယ္
+		e.g. ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc.
+		
+	3) e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc.
+	
+Java Exceptions Index
+	1.Java Try-Catch Block
+	2.Java Multiple Catch Block
+	3.Java Nested Try
+	4.Java Finally Block
+	5.Java Throw Keyword
+	6.Java Exception Propagation
+	7.Java Throws Keyword
+	8.Java Throw vs Throws
+	9.Java Final vs Finally vs Finalize
+	10.Java Exception Handling with Method Overriding
+	11.Java Custom Exceptions
+	
+	1.Java Try-Catch Block
+		Java try block
+			exception ပစ္ဖို႔ရန္ code ကို ၀န္းရံထားတဲ့ block တစ္ခုၿဖစ္တယ္ သူ႕ကို method အတြင္းထဲမွာ သံုးရမယ္
+		
+		Java catch block
+			catch block က parameter အတြင္းထဲမွာ exception type ကိုေၾကညာေပးၿခင္းအားၿဖင့္ exception ကို handle လုပ္ေပးႏိုင္တယ္
+			declared exception မွာ exception က parent exception ၿဖစ္ရင္ၿဖစ္ မၿဖစ္ရင္ generated exception type ၿဖစ္ရမယ္
+			ေကာင္းတဲ့နည္းလမ္းကေတာ့ generated exception type ကို ေၾကညာတာကေတာ့ ပိုေကာင္းတယ္
+			try block တစ္ခုတည္းမွာ catch block ေတြအမ်ားၾကီး ရွိေနတာလည္း ၿဖစ္ႏိုင္တယ္
+			
+		Internal working of java try-catch block
+			JVM ကအရင္ စcheck တယ္ exception ဖမ္းရင္ေကာင္မလား မေကာင္းဘူးလားဆိုတာ 
+			exception ကို handled မလုပ္ႏိုင္ဘူးဆိုရင္ JVM က default exception handler ကိုထုတ္ေပးလိုက္ၿပီး ေအာက္ေဖာ္ၿပပါလုပ္ငန္းစဥ္မ်ားကိုလုပ္ေဆာင္တယ္
+				1.exception description မ်ားကို ရိုက္ထုတ္ေပးတယ္
+				2.exception တက္ရာ method ရဲ႕ pack လမ္းေၾကာင္းကိုရိုက္ထုတ္ေပးတယ္
+				3.program terminate ၿဖစ္တဲ့အေၾကာင္းအရာ
+*********************************************************************************************************************				
+	2.Java catch multiple exceptions
+		Multi-catch block
+			try block တစ္ခုမွာ catch block မ်ားစြာရွိေနရမယ္ 
+			catch block တစ္ခုစီတိုင္းမွာ မတူညီတဲ့ exception handler မ်ားရွိရမယ္
+			အဲ့လိုဆိုရင္ မတူညီတဲ့ task တိုင္းမွာ မတူညီတဲ့ exception မ်ားတက္ခဲ့တယ္ဆိုရင္ multi-catch block ကိုသံုးလို႔ရတယ္
+			
+			မွတ္သားဖို႔ရာအခ်က္မ်ား
+				1.exception တစ္ခုတည္းပဲ တက္မယ္ဆိုရင္ catch block တစ္ခုတည္းပဲ ရွိရမယ္
+				2.catch block ေတြရဲ႕ order က ေသးရာကေန general ၿဖစ္သြားရမယ္ ဥပမာ ArithmeticException ကိုဖမ္းၿပီးမွ Exception ကိုဖမ္းရမယ္
+********************************************************************************************************************
+	3.Java Nested try block
+		try block တစ္ခုတည္းမွာ ေနာက္ထပ္ try block တစ္ခုရွိေနရင္ nested try block လို႔ေခၚတယ္
+		
+		ဘာလို႔ nested try block ကို သံုးတာလဲ
+			process က ႏွစ္ခု ႏွစ္ခုစလံုးမွာ မတူညီတဲ့ error ေတြတက္ႏိုင္တယ္ဆိုရင္ nested try block ကိုသံုးေပးရမယ္		
+*******************************************************************************************************************			
+	4.finally block
+		finally block ကို အေရးတၾကီး လုပ္ရမယ့္ code ေတြကို ေရးဖို႔အတြက္ ၿဖစ္တယ္
+		stream ေတြ connection ေတြကို ပိတ္တဲ့အလုပ္မ်ိဳးေတြၿဖစ္တယ္
+		finally block က exception ဖမ္းဖမ္း မဖမ္းဖမ္း လုပ္မွာ
+		finally block က try or catch block ကို follow လုပ္တယ္
+		
+			မွတ္္သားရမွာက
+				exception ကို handle မလုပ္ႏိုင္ေတာ့လို႔ exception တက္ေတာ့မယ္ဆိုရင္ JVM က finally block ကိုလုပ္ေဆာင္တယ္
+				try block ေတြ catch block ေတြ ဘယ္ေလာက္မ်ားမ်ား finally block ကေတာ့ တစ္ခုတည္းရွိတယ္
+				program exist ၿဖစ္သြားခဲ့မယ္ဆိုရင္ေတာ့ finally block က အလုပ္လုပ္ေတာ့မွာ မဟုတ္ဘူး
+********************************************************************************************************************
+	5.throw exception
+		throw keyword ကို exception မ်ား throw  လုပ္ဖို႔အတြက္ သံုးတယ္
+		checked or unchecked exception မ်ားကို throw လုပ္ခ်င္ရင္လည္း throw keyword ကိုသံုးလို႔ရတယ္ မ်ားေသာအားၿဖင့္ custom exception ေတြမွာပဲ
+			အသံုးၿပဳတာမ်ားတယ္
+*******************************************************************************************************************			
+	6.Exception propagation
+			method အတြင္းမွာ exception တက္လို႔ အဲ့ method ကိုယ္တိုင္က မဖမ္းခဲ့ဘူးဆိုရင္ သူ႕ကိုေခၚထားတဲ့ method က အဲ့ exception ကိုဖမ္းဖို႔တာ၀န္ရွိတယ္
+*******************************************************************************************************************			
+	7.throws keyword
+		exception တစ္ခုကို declare လုပ္တဲ့အခါမွာ သံုးတယ္
+		exception ကိုေတြ႕ေသာ္လည္း ပိုၿပီး exception handling လုပ္လို႔ပိုေကာင္းတဲ့ေနရာမွာ handling လုပ္ဖို႔အတြက္ exception ကို throws လုပ္ရၿခင္းၿဖစ္တယ္
+		exception ကို handle လုပ္ရင္ မ်ားေသာအားၿဖင့္ unchecked exception ေတြကို လုပ္တာမ်ားတယ္ ဘာလို႔ဆိုေတာ့ checked exception ေတြၿဖစ္တဲ့
+		NullPointerException တို႔ဘာတို႔ဆိုတာက programmer တစ္ေယာက္အေနနဲ႔ check ထားသင့္တယ္ handling လုပ္စရာမလိုဘူး
+		
+			ဘယ္လို exception မ်ိဳးကို declare လုပ္သင့္သလဲ
+				1.unchecked exception
+				2.error
+				
+			throws keyword ရဲ႕ ေကာင္းက်ိဳးမ်ား
+				အခုဆိုရင္ checked exception ေတြကို propagated လုပ္လို႔ရၿပီ
+				method ကို call တဲ့ေကာင္ကို exception အေၾကာင္း information ေပးလို႔ရၿပီ
+				
+			မွတ္သားရန္
+				Case1:You caught the exception i.e. handle the exception using try/catch.
+				Case2:You declare the exception i.e. specifying throws with the method.
+*******************************************************************************************************************					
+	8.Difference between throw and throws
+		1)throw က exception တစ္ခုကိုပစ္ဖို႔အတြက္သံုးတယ္
+		1)throws ကေတာ့ exception တစ္ခုကို declare လုပ္ဖို႔သံုးတာ
+		
+		2)checked exception က throw keyword တစ္ခုတည္းကိုသံုးၿပီး propagated လုပ္လို႔မရဘူး
+		2)checked exception က throws keyword ကိုသံုးမွ propagated လုပ္လို႔ရမယ္
+		
+		3)instance တစ္ခုက throw ကို follow လုပ္ထားတယ္
+		3)class တစ္ခုက throws ကို follow လုပ္ထားတယ္
+		
+		4)throw ကို method အတြင္းမွာ အသံုးၿပဳတယ္
+		4)throws ကိုေတာ့ method ရဲ႕အစိတ္အပိုင္းတစ္ခုအေနနဲ႔ အသံုးၿပဳတယ္
+		
+		5)throw တစ္ခုတည္းနဲ႔ exception အမ်ားၾကီးကို ပစ္လို႔မရဘူး
+		5)throws ကေတာ့တစ္ခါတည္းနဲ႔ exception အမ်ားၾကီးကို ပစ္လို႔ရတယ္
+*******************************************************************************************************************			
+	9.Difference between final, finally and finalize
+		1)final ဆိုတဲ့ keyword က class, method and variable အားလံုးနဲ႔ဆိုင္တယ္
+			final class ဆိုရင္ သူ႕ကို inheritance လုပ္လို႔မရဘူး
+			final method ဆိုရင္ သူ႕ကို overridden လုပ္လို႔မရဘူး
+			final variable ဆိုရင္ သူ႕ကို တန္ဖိုးထည့္ေပးလို႔မရဘူး
+			
+			finally ဆိုတဲ့ block ကို exception ၿဖစ္ၿဖစ္ မၿဖစ္ၿဖစ္ လုပ္ေဆာင္ေစခ်င္တဲ့ code ေတြထည့္္ေရးဖို႔
+			
+			Finalize ဆိုတဲ့ method ကိုေတာ့ object ေတြ garbage collected မလုပ္ခင္ processing ေတြကို clean လုပ္ဖို႔အတြက္ၿဖစ္တယ္
+			
+			သူတို႔ေတြရဲ႕ အမ်ိဳးအစားေတြကေတာ့ 
+			final က keyword
+			finally က block
+			finalize က method
+*******************************************************************************************************************				
+	10.ExceptionHandling with MethodOverriding
+		Rules
+			1.super class ရဲ႕ method က exception ကို declare မလုပ္ခဲ့ဘူးဆိုရင္ subclass ရဲ႕ overridden method က checked exception ကို declare လုပ္ႏိုင္မွာ
+			မဟုတ္ဘူး ဒါေပမယ့္ unchecked exception ကိုေတာ့ declare လုပ္ႏိုင္တယ္
+			
+			2.super class ရဲ႕ method က exception ကို declare လုပ္ခဲ့မယ္ဆိုရင္ subclass ရဲ႕ overridden method ကလည္း declare လုပ္ႏိုင္တယ္
+				subclass exception or no exception ဒါေပမယ့္ parent exception ကိုေတာ့ declare လုပ္လို႔ရမွာ မဟုတ္ဘူး
+		
+			3.super class က parent exception ကို declare လုပ္ထားမယ္ child class က child exception ကို declare လုပ္ထားမယ္
+				အဲ့တာဆိုရင္ parent class ရဲ႕ method က အလုပ္လုပ္လိမ့္မယ္
+				
+			4.super class က child exception ကို declare လုပ္ထားမယ္ child class က parent exception ကို declare လုပ္ထားမယ္ဆိုရင္
+			compile time error တက္လိမ့္မယ္
+			
+			5.super class ကလည္း exception ကို declare လုပ္ထားမယ္ child class ကလည္း exception ကို declare လုပ္ထားမယ္ exception ကလည္း same
+			level ဆိုရင္ child class ရဲ႕ method က အလုပ္လုပ္လိမ့္မယ္
+			
+			6.super class က exception ကို declare လုပ္ထားမယ္ child class က exception ကို declare မလုပ္ထားဘူးဆိုရင္ parent class ရဲ႕ method က
+			အလုပ္လုပ္လိမ့္မယ္
+			
