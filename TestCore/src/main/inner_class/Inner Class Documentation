@@ -41,5 +41,37 @@ Inner Class
 	anonymous inner class ကို နည္းလမ္း ၂ မ်ိဳး နဲ႔ ဖန္တီးႏိုင္တယ္
 		1.Class
 		2.Interface
+******************************************************************************************************************		
+3.Local Inner Class
+	method တစ္ခုအတြင္းထဲမွာ ရွိေသာ class ကို local inner class လို႔ေခၚတယ္ 
+	local inner class ရဲ႕ method မ်ားကို invoke လုပ္ခ်င္တယ္ဆိုရင္ ငံုထားတဲ့ method က အဲ့ class ရဲ႕အၿပင္ဘက္မွာ အဲ့ inner class ကို obj ေဆာက္ၿပီးcall ထားရမယ္
+	ၿပီးသြားရင္ေတာ့ တစ္ၿခားေနရာကေန အၿပင္ class ကို obj ေဆာက္ၿပီး inner class က method ကို လွမ္းေခၚလို႕ရၿပီ အၿပင္ class ရဲ႕ obj ကေနတစ္ဆင့္
+	
+	မွတ္သားစရာ
+		local inner class ရဲ႕ variable ေတြက private ၿဖစ္လို႔မရဘူး
+		public or protected တစ္ခုခု ၿဖစ္မွရမယ္
 		
+	Rules for Java Local Inner class
+		Local Inner Class က အၿပင္က class ေတြရဲ႕ method ေတြကို လွမ္းေခၚလို႔မရဘူး
+******************************************************************************************************************				
+4.Static Nested Class
+	class တစ္ခုအတြင္းထဲမွာ static class ရွိေနခဲ့မယ္ဆိုရင္ အဲ့တာကို static nested class လို႔ေခၚတယ္
+	သူက non static data members ေတြနဲ႔ methods ေတြကို access မလုပ္ႏိုင္ဘူး
+	Outer Class name အားၿဖင့္သာ access လုပ္ႏိုင္တယ္
+******************************************************************************************************************					
+5.Nested Interface
+	interface တစ္ခုအတြင္း ေနာက္ထပ္ interface တစ္ခုရွိခဲ့လို႔ရွိရင္ အဲ့ interface ကို nested interface လို႔ေခၚတယ္
+	nested interface ေတြကို related ၿဖစ္ေနေသာ interfaces မ်ားကို group ဖြဲ႕ခ်င္တဲ့အတြက္ သံုးရတာၿဖစ္တယ္ ပိုၿပီးေတာ့ maintainable ၿဖစ္ေအာင္လို႔
+	nested interface က တစ္ၿခား interface သို႔မဟုတ္ class တစ္ခုခုကို referred လုပ္ကိုလုပ္ရမယ္ 
+	သူက တိုက္ရိုက္ access လုပ္လို႔မရဘူး
+	
+	မွတ္သားရန္
+		1.nested interface တစ္ခုက interface ထဲမွာေရးထားတယ္ဆိုရင္ access modifier က public ပဲၿဖစ္ရမယ္
+			ဒါေပမယ့္ class တစ္ခုအတြင္းမွာသာ ေရးထားမယ္ဆိုရင္ ၾကိဳက္တဲ့ access modifier ကိုသံုးလို႔ရတယ္
+		2.Nested interfaces are declared static implicitely.
 		
+	interface တစ္ခုအတြင္းမွာ class တစ္ခုကို define လုပ္လို႔ရႏိုင္သလား
+		ရပါတယ္
+		interface တစ္ခုအတြင္းမွာ class ကို define လုပ္ခဲ့မယ္ဆိုရင္ java compiler က static nested class တစ္ခုကို ဖန္တီးလိုက္တယ္
+		
+	

@@ -1,0 +1,119 @@
+Multithreading
+	Multithreading ဆိုတာ မ်ားၿပားစြာေသာ threads မ်ားကို တစ္ခ်ိန္တည္းမွာ executing လုပ္တဲ့ process တစ္ခုၿဖစ္တယ္
+	thread ဆိုတာက ေပါ့ပါးတဲ့ sub process တစ္ခုၿဖစ္တယ္ processing တစ္ခုရဲ႕ အေသးငယ္ဆံုး unit တစ္ခုၿဖစ္တယ္
+	Multiprocessing ေရာ multithreading ပါ multitasking ရရွိဖို႔အတြက္ အသံုးၿပဳၾကတယ္
+	
+	multithreading ကို multiprocessing ထက္ပိုသံုးၾကတယ္ ဘာလို႔လဲဆိုေတာ့ threads ေတြဟာ memory ကို share ၿပီးသံုးၾကတယ္
+	memory ကို ခြဲၿပီးမသံုးတဲ့အတြက္ memory ကို save ၿဖစ္ေစတယ္
+	context-switching လုပ္ဖို႔အခ်ိန္ယူတာကလည္း threads ေတြက processes ေတြထက္ ပိုနည္းတယ္
+	
+	Multithreading ရဲ႕ေကာင္းက်ိဳးမ်ား
+		1.threads ေတြဟာ independent ၿဖစ္တယ္ ၿပီးေတာ့ multiple operation မ်ားကို တစ္ခ်ိန္တည္းမွာ ေဆာင္ရြက္ႏိုင္တယ္
+		2.multiple opreation မ်ားကို တစ္ခ်ိန္တည္းမွာ ေဆာင္ရြက္ႏိုင္တဲ့အတြက္ အခ်ိန္ကုန္လည္း သက္သာေစတယ္
+		3.threads မ်ားဟာ တစ္ခုနဲ႔တစ္ခု မမွီခိုတဲ့အတြက္ thread တစ္ခုမွာ exception တက္ခဲ့သည့္တိုင္ေအာင္ တစ္ၿခား threads မ်ားကို effect မၿဖစ္ေစႏိုင္ဘူး
+		
+	Multitasking
+		multitasking ဆိုတာက မ်ားၿပားစြာေသာ task မ်ားကို တစ္ၿပိဳင္နက္တည္းမွာ ေဆာင္ရြက္ႏိုင္တဲ့ process တစ္ခုၿဖစ္တယ္
+		CPU ကို multitasking လုပ္တဲ့အခါ ခြဲၿပီးသံုးတယ္
+		Multitasking ကို နည္းလမ္း ၂ မ်ိဳးနဲ႔ ရယူႏိုင္တယ္
+			1.Process-based Multitasking (Multiprocessing)
+			2.Thread-based Multitasking (Multithreading)
+			
+			1.Process-based Multitasking (Multiprocessing)
+				process တစ္ခုခ်င္းစီတိုင္းအတြက္ memory မွာ address တစ္ခုစီရွိတယ္
+				process တစ္ခုခ်င္းစီတိုင္းဟာ ေလးတယ္
+				process မ်ားၾကားမွာရွိတဲ့ communication ရဲ႕ ကုန္က်စရိတ္ဟာမ်ားတယ္
+				process တစ္ခုကေန ေနာက္တစ္ခုကို change မယ္ဆိုရင္ အခ်ိန္ေတာ္ေတာ္ယူရတယ္ ဘာေတြအတြက္လဲဆိုေတာ့
+					 saving and loading registers, memory maps, updating lists, etc.
+					 
+			2.Thread-based Multitasking (Multithreading)
+				thread ကေတာ့ memory ကို share ၿပီးသံုးတယ္
+				thread က ေပါ့တယ္
+				thread  ေတြၾကားထဲမွာ ရွိတ့ဲ communication cost က နည္းတယ္
+				
+			Note:thread တစ္ခုခ်င္းစီအတြက္ အနည္းဆံုး process တစ္ခုေတာ့လိုပါတယ္
+			
+			Thread ဆိုတာဘာလဲ
+				thread ဆိုတာက light weight ၿဖစ္တဲ့ sub process တစ္ခုၿဖစ္တယ္
+				execute ရဲ႕ သီးၿခား path ေလးေတြၿဖစ္တယ္
+				thread ေတြဟာ သီးၿခားရပ္တည္တယ္
+				သီးၿခားရပ္တည္တဲ့အတြက္ thread တစ္ခုမွာ exception တက္လာခဲ့မယ္ဆိုရင္ေတာင္ ေနာက္thread တစ္ခုကို effect မၿဖစ္ေစႏိုင္ဘူး
+				သူတို႔က memory ကို share သံုးပါတယ္
+				
+				ပံုထဲမွာ ၿပထားတာကေတာ့ thread ေတြ process တစ္ခုတည္းမွာ အလုပ္လုပ္ေနတဲ့ ပံုစံၿဖစ္တယ္
+				threads ေတြၾကားထဲက context-switching ကိုလည္း ၿမင္ရမယ္ 
+				OS ထဲမွာ multiple process ကိုလည္း ေတြ႕ရမယ္ 
+				process ထဲက multiple threads မ်ားကိုလည္း ေတြ႕ၿမင္ရမယ္
+				
+			Java Thread class
+				 java က thread class ကိုေပးတယ္ thread programming ကို ရရွိေစဖို႔ရန္အတြက္
+				 thread class က constructor နဲ႔ method ေတြကိုေပးတယ္ thread တစ္ခုေပၚမွာ operation မ်ားကို ဖန္တီးဖို႔ရန္နဲ႔ လုပ္ေဆာင္ရန္ 
+				 thread class ဟာ object class ကို extends လုပ္ထားတယ္ runnable interface ကို implements လုပ္ထားတယ္
+******************************************************************************************************************
+Life Cycle of a Thread(Thread States)
+	thread တစ္ခုမွာ အဆင့္ ၅ ဆင့္ရွိတယ္
+	java မွာ ရွိတဲ့ thread ေတြကို JVM က ထိန္းခ်ဳပ္ထားတယ္
+	သူ႕ရဲ႕ states ေတြကေတာ့
+		1.New
+		2.Runnable
+		3.Running
+		4.Non-Runnable (Blocked)
+		5.Terminated
+		
+		1.New
+			New state ဆိုတာက thread class ကို instance ယူၿပီးတဲ့ေနာက္ start() method အလုပ္မလုပ္ခင္အခ်ိန္ကို ေၿပာတာၿဖစ္တယ္
+			
+		2.	Runnable
+			Runnable state ဆိုတာက start() method အလုပ္လုပ္ၿပီး thread scheduler က running မလုပ္ေသးခင္အခ်ိန္ကို ေၿပာတာၿဖစ္တယ္
+			
+		3. Running
+			Running state ဆိုတာက thread scheduler က ေရြးခ်ယ္ၿပီးတဲ့အခ်ိန္ကို ဆိုလိုတယ္
+			
+		4.Non-Runnable (Blocked)
+			Non-Runnable (Blocked) ဆိုတာက run လို႔အဆင္မေၿပေတာ့ဘူး ဒါေပမယ့္ thread က ရွင္သန္ေနဆဲဆိုတဲ့ state ကို ဆိုလိုသည္
+			
+		5.Terminated
+			run() method ကေန ထြက္သြားေသာအခါ thread က ရပ္တန္႔သြားေသာ state ကို ဆိုလိုသည္
+******************************************************************************************************************
+Thread ေတြကို ဘယ္လိုဖန္တီးမလဲ
+	Thread ေတြကို ဖန္တီးဖို႔ နည္းလမ္း ၂ မ်ိဳး ရွိတယ္
+		1.Thread Class ကို extend လုပ္ၿခင္းအားၿဖင့္ေသာ္လည္းေကာင္း
+		2. Runnable interface ကို implement လုပ္ၿခင္းအားၿဖင့္ေသာ္လည္းေကာင္း
+	ဖန္တီးႏိုင္တယ္
+	
+	Thread Class: ဆိုတာ ဘာလဲ
+		Thread Class က thread တစ္ခုေပၚမွာ operation မ်ားကို ဖန္တီးရန္ နဲ႔ လုပ္ေဆာင္ရန္ constructors မ်ားနဲ႔ methods မ်ားကို ေပးပါတယ္
+		Thread Class ဟာ Object Class ကို extend လုပ္ထားၿပီး Runnable Interface ကို implement လုပ္ထားပါတယ္
+	Thread Class ရဲ႕ အသံုးမ်ားတဲ့ Constructors မ်ားကေတာ့
+		1.Thread()
+		2.Thread(String name)
+		3.Thread(Runnable r)
+		4.Thread(Runnable r,String name)
+		တို႔ ၿဖစ္ၾကတယ္
+	Thread Class ရဲ႕ အသံုးမ်ားတဲ့ Methods မ်ားကေတာ့
+		1.public void run(): is used to perform action for a thread.
+		2.public void start(): starts the execution of the thread.JVM calls the run() method on the thread.
+		3.public void sleep(long miliseconds): Causes the currently executing thread to sleep (temporarily cease execution) for the specified number of milliseconds.
+		4.public void join(): waits for a thread to die.
+		5.public void join(long miliseconds): waits for a thread to die for the specified miliseconds.
+		6.public int getPriority(): returns the priority of the thread.
+		7.public int setPriority(int priority): changes the priority of the thread.
+		8.public String getName(): returns the name of the thread.
+		9.public void setName(String name): changes the name of the thread.
+		10.public Thread currentThread(): returns the reference of currently executing thread.
+		11.public int getId(): returns the id of the thread.
+		12.public Thread.State getState(): returns the state of the thread.
+		13.public boolean isAlive(): tests if the thread is alive.
+		14.public void yield(): causes the currently executing thread object to temporarily pause and allow other threads to execute.
+		15.public void suspend(): is used to suspend the thread(depricated).
+		16.public void resume(): is used to resume the suspended thread(depricated).
+		17.public void stop(): is used to stop the thread(depricated).
+		18.public boolean isDaemon(): tests if the thread is a daemon thread.
+		19.public void setDaemon(boolean b): marks the thread as daemon or user thread.
+		20.public void interrupt(): interrupts the thread.
+		21.public boolean isInterrupted(): tests if the thread has been interrupted.
+		22.public static boolean interrupted(): tests if the current thread has been interrupted.
+		
+		Runnable interface
+			မည္သည့္ class မဆို Runnable interface ကို implement လုပ္သင့္တယ္
+			
