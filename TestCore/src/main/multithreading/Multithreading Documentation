@@ -116,4 +116,96 @@ Thread ေတြကို ဘယ္လိုဖန္တီးမလဲ
 		
 		Runnable interface
 			မည္သည့္ class မဆို Runnable interface ကို implement လုပ္သင့္တယ္
+			runnable interface မွာ method တစ္ခုပဲ ရွိတယ္
 			
+		thread တစ္ခုအစၿပဳၿခင္း
+			start() ဆိုတဲ့ method ကို thread အသစ္တစ္ခု စတင္ဖို႔ သံုးပါတယ္
+			သူတို႕က ေအာက္ေဖာ္ၿပပါ tasks မ်ားကို လုပ္ေဆာင္ပါတယ္
+				1.new thread တစ္ခုစတင္ၿပီ
+				2.thread က new state ကေန runnable state ကို ေရႊ႕ေၿပာင္းသြားတယ္
+				3.thread ဟာ execute လုပ္မယ္ဆိုရင္ေတာ့ run() method ကိုေခၚၿပီး run လုိက္တယ္
+*******************************************************************************************************************
+Thread Scheduler				
+	Thread Scheduler ဆိုတာ java ရဲ႕ အစိတ္အပိုင္းတစ္ခုၿဖစ္တယ္ 
+	Thread Scheduler က ဘယ္ thread ကို run သင့္လည္းဆိုတာကို ဆံုးၿဖတ္တယ္
+	Thread scheduler က ဘယ္ thread ကို runnable လုပ္မလဲဆိုတာကို အာမခံခ်က္မရွိဘူး
+	Thread တစ္ခုဟာ Single process တစ္ခုမွာ တစ္ခါပဲ run ႏိုင္တယ္ တစ္ခ်ိန္တည္းမွာ
+	Thread scheduler က thread ေတြကို schedule လုပ္ဖို႔ရန္ preemptive သို႔မဟုတ္ time slicing ကို အဓိကထားသံုးပါတယ္
+*******************************************************************************************************************
+Sleep Method 
+	Thread Class ရဲ႕ Sleep Method က သတ္မွတ္ထားတဲ့အခ်ိန္တစ္ခုမွာ thread တစ္ခုကို sleep လုပ္ဖို႔ရန္ သံုးပါတယ္
+	
+	Syntax of sleep() method
+		Method ၂ ခုရွိပါတယ္
+			1.public static void sleep(long miliseconds)throws InterruptedException
+			2.public static void sleep(long miliseconds, int nanos)throws InterruptedException
+*******************************************************************************************************************
+Thread တစ္ခုကို ၂ ခါ စလို႔ရလား
+	မရပါဘူး
+	Thread တစ္ခုကို စတင္ၿပီးတဲ့ေနာက္ပိုင္းမွာ အဲ့ thread ကို ေနာက္ဘယ္ေတာ့မွ စလို႔မရဘူး
+	အဲ့လိုသြားစခဲ့မယ္ဆိုရင္ IllegalThreadStateException ကိုပစ္သြားလိမ့္မယ္
+*******************************************************************************************************************			
+Join Method
+	join method က thread ေသဖို႔ေစာင့္ေနၿခင္းၿဖစ္တယ္
+	လက္ရွိ run ေနတဲ့ thread complete လုပ္ေဆာင္ၿပီးတဲ့ေနာက္ ရပ္သြားခဲ့ရင္ ေနာက္ထပ္ thread က ခ်က္ခ်င္း join ၿပီးဆက္လက္လုပ္ေဆာင္တယ္လို႔ 
+	နားလည္ထားတယ္
+*******************************************************************************************************************	
+Naming Thread and Current Thread
+	Naming Thread
+		thread တစ္ခုရဲ႕ name ကို ရဖို႔နဲ႔ name ကို change ဖို႔ရန္ thread class က method တစ္ခုေပးပါတယ္
+		default အားၿဖင့္ဆိုရင္ thread တစ္ခုခ်င္းစီတိုင္းမွာ name ေတြရွိတယ္ ဥပမာ thread-0 and thread-1 ဆိုၿပီးေတာ့ ရွိတယ္
+		အဲ့တာကို setName() ဆိုတဲ့ method ကိုသံုးၿပီးေတာ့ name ေတြကို change လို႔ရတယ္
+		
+		syntax
+			1. public String getName(): is used to return the name of a thread.
+            2. public void setName(String name): is used to change the name of a thread.	
+
+     Current Thread
+     	currently executing thread ရဲ႕ reference ကို return ၿပန္ေပးလိမ့္မယ္
+*********************************************************************************************************************
+Priority of a Thread (Thread Priority)
+	Thread တိုင္းမွာ priority ရွိတယ္
+	priorities မ်ားကို ၁ ကေန ၁၀ အတြင္းနံပါတ္မ်ားနဲ႔ ကိုယ္စားၿပဳတယ္
+	 thread schedular က သူတို႕ရဲ႕ priority အတိုင္း schedule ဆြဲတယ္ အဲ့တာကို  preemptive scheduling လို႔ေခၚတယ္
+	 ဒါေပမယ့္လို႔ အာမေတာ့ မခံႏိုင္ဘူး ဘာလို႔လဲဆိုေတာ့ အဲ့တာက JVM အေပၚကို မူတည္ေနလို႔
+	 
+	 Priority ၃ မ်ိဳး
+	 	1.public static int MIN_PRIORITY
+		2.public static int NORM_PRIORITY
+		3.public static int MAX_PRIORITY
+		
+		NORM_PRIORITY(Default priority) က 5, MIN_PRIORITY က 1, MAX_PRIORITY က 10
+*********************************************************************************************************************		
+Demon Thread
+	Demon Thread ဆိုတာ Service Provider တစ္ခုၿဖစ္တယ္
+	Demon Thread က User Thread ကို service တစ္ခုေပးတယ္
+	သူ႕ရဲ႕ သက္တမ္းက User Thread ေပၚမွာ မူတည္ေနတယ္
+	ဥပမာ User Threads အားလံုးေသသြားခဲ့မယ္ဆိုရင္ JVM က အဲ့ Demon Thread ကိုလည္း auto terminate လုပ္သြားလိမ့္မယ္
+	
+	java မွာက demon thread ေတြအမ်ားၾကီး လက္ရွိ run ေနၾကတယ္
+	e.g. gc, finalizer etc.	
+	
+	detail ၿမင္ခ်င္တယ္ဆိုရင္ေတာ့ console မွာ jconsole လို႔ရိုက္လိုက္ရင္ အဲ့ jconsole tool ကေန loaded classes တို႔ memory usage တို႔ running threads တို႔ကို
+	ၿပေပးလိမ့္မယ္
+	
+	Point to Remember for Demon Thread
+		background supporting tasks ေတြအတြက္ user threads ေတြကို Demon Thread က services မ်ားေပးေနတယ္
+		သူ႕ရဲ႕ life က user threads ေပၚမွာ မူတည္ေနတယ္
+		သူက priority နိမ့္တဲ့ thread တစ္ခုၿဖစ္တယ္
+		
+User Threads မရိွေတာ့ဘူးဆိုရင္ JVM က Demon Thread ကို ဘာလို႔ terminate လုပ္ရတာလဲ
+	သူေၿပာၿပီးသားပဲ Demon Thread ဆိုတာ user thread အတြက္ပဲ အလုပ္လုပ္ေပးေနတာၿဖစ္တဲ့အတြက္
+	user thread ေတြသာ မရွိေတာ့ဘူးဆိုရင္ demon thread က ဘယ္လိုမွ ရွိႏိုင္ေတာ့မွာ မဟုတ္ဘူး
+	
+Thread Class ရဲ႕ Demon Thread Method မ်ား
+	java.lang.Thread class က java demon thread အတြက္ methods ၂ ခုေပးလိမ့္မယ္
+		1.public void setDaemon(boolean status)
+			current thread က user thread လား demon thread လားဆိုတာ မွတ္ဖို႔အတြက္ သံုးတဲ့ method ၿဖစ္တယ္
+		2.public boolean isDaemon()
+			current thread က demon thread လားဆိုတာ စစ္ေဆးဖို႔အတြက္ သံုးတဲ့ method ၿဖစ္တယ္
+			
+	*thread တစ္ခုကို စၿပီးမွ demon thread ထည့္လိုက္လို႔ရွိရင္ 
+	 java.lang.IllegalThreadStateException
+	 အဲ့လို exception တက္သြားလိမ့္မယ္
+********************************************************************************************************************	 
+	
