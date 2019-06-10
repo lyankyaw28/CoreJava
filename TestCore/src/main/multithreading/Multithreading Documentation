@@ -208,4 +208,151 @@ Thread Class ရဲ႕ Demon Thread Method မ်ား
 	 java.lang.IllegalThreadStateException
 	 အဲ့လို exception တက္သြားလိမ့္မယ္
 ********************************************************************************************************************	 
+Thread Pool
+	thread pool ဟာ ကိုယ္စားၿပဳတယ္ worker threads ေတြရဲ႕ group တစ္ခုကို ကုိယ္စားၿပဳတယ္
+	သူတို႔ဟာ အလုပ္လုပ္ဖို႔ရန္ ေစာင့္ေနတယ္ ၿပီးေတာ့ သူတို႔ကို ၿပန္လည္ အသံုးၿပဳၾကတယ္
 	
+	thread pool ၿဖစ္စဥ္တစ္ခုမွာဆိုရင္ fixed size thread ေတြရဲ႕ group တစ္ခုဟာ ဖန္တီးၿခင္းခံရတယ္
+	service provider က thread တစ္ခုကို thread pull ကေန ဆြဲထုတ္ၿပီး job တစ္ခုမွာ assign ခ်လိုက္တယ္
+	
+	အလုပ္ၿပီးေၿမာက္ၿပီးတဲ့ေနာက္မွာေတာ့ thread pool ထဲကို threads ေတြထပ္ၿပီး ပါ၀င္လာတယ္
+	
+	Thread Pool ရဲ႕ေကာင္းက်ိဳးမ်ား
+		Better Performance - အခ်ိန္ကုန္ သက္သာေစတယ္ ဘာလို႔လဲဆိုေတာ့ thread အသစ္ေတြကို ဖန္တီးစရာမလိုတဲ့အတြက္ေၾကာင့္ၿဖစ္တယ္
+		
+	တကယ္တန္းအသံုးၿပဳပံု	
+		သူတို႔ကို Servlet  တို႔  JSP တို႔မွာသံုးတယ္
+***********************************************************************************************************************
+Thread Group
+	java က single object တစ္ခုတည္းမွာ multiple threads မ်ားကို group ဖြဲ႕ဖို႔ရန္ အဆင္ေၿပမယ့္ နည္းလမ္းတစ္ခုေပးထားတယ္
+	အဲ့နည္းလမ္းမွာဆိုရင္ method တစ္ခုတည္းနဲ႔ group of threads မ်ားကို suspend, resume or interrupt လုပ္ေဆာင္ႏိုင္တယ္
+	
+	Java thread group က java.lang.ThreadGroup class ကို implemented လုပ္ထားတယ္ 	
+	ThreadGroup တစ္ခုဆိုတာက set of threads တစ္ခုကို ကိုယ္စားၿပဳတယ္
+	ThreadGroup တစ္ခုဟာ တစ္ၿခား ThreadGroup တစ္ခုထဲမွာလည္း ပါ၀င္ႏိုင္တယ္
+	ThreadGroup တစ္ခုဟာ tree တစ္ခုကို ဖန္တီးႏိုင္ၿပီးေတာ့ အဲ့ထဲမွာ initial thread group ကလြဲလို႔ တစ္ၿခား thread group ေတြကေတာ့ parent ေတြကိုယ္စီရွိၾကတယ္
+	thread ေတြက သူ႕ကိုယ္ပိုင္ own thread group ဆီကပဲ information ေတြကို access လုပ္လို႔ရမယ္ တစ္ၿခား thread group ဒါမွမဟုတ္ parent thread group ေတြဆီကေတာ့
+	access လုပ္လို႔ရမွာ မဟုတ္ဘူး
+	
+	Constructors of ThreadGroup class
+		constructor ႏွစ္ခုပဲ ရွိပါတယ္
+		method ေတြကေတာ့ အမ်ားၾကီးရွိတယ္
+		
+	ThreadGroup tg1 = new ThreadGroup("Group A");   
+	Thread t1 = new Thread(tg1,new MyRunnable(),"one");     
+	Thread t2 = new Thread(tg1,new MyRunnable(),"two");     
+	Thread t3 = new Thread(tg1,new MyRunnable(),"three");  
+	
+	ဒီမွာဆိုရင္ thread သံုးခုကို thread group တစ္ခုတည္းမွာ ထည့္ထားတယ္
+	tg1 ဆိုတာက thread group name ၿဖစ္ၿပီးေတာ့ MyRunnable ဆိုတာက Runnable interface ကို implements လုပ္ထားတဲ့ class တစ္ခုၿဖစ္တယ္
+	one two three ဆိုတာက thread name ေတြၿဖစ္ၾကတယ္
+	
+	အဲ့ thread အားလံုးကို code တစ္ေၾကာင္းထဲနဲ႔ interrupt လုပ္လိုက္လို႔ရတယ္
+	
+	Thread.currentThread().getThreadGroup().interrupt();  
+***********************************************************************************************************
+Shutdown Hook
+	Shutdown Hook ကို resource ကို clean လုပ္ဖို႔ေသာ္လည္းေကာင္း jvm shutdown က်သြားခဲ့သည္ရွိေသာ္ state ကို save လုပ္ဖို႔အတြက္ေသာ္လည္းေကာင္းသံုးတယ္
+	clean resource လုပ္ေဆာင္ခ်က္ဆိုတာက log file မ်ားကို ပိတ္ၿခင္း sending some alerts မ်ားလည္း ပါ၀င္ပါတယ္
+	အဲ့တာေၾကာင့္ Jvm shutdown မက်ခင္မွာ တစ္ခ်ိဳ႕ေသာ code မ်ားကို execute လုပ္ခ်င္တယ္ဆိုရင္ shutdown hook ကို အသံုးၿပဳလို႔ ရႏိုင္တယ္
+	
+	JVM က ဘယ္အခ်ိန္မွာ shut down က်ႏိုင္သလဲ
+		1.user က common prompt မွာ ctrl+c ႏွိပ္လိုက္ေသာအခါ
+		2.System.exit(int) method ကို သြားေခၚမိေသာအခါ
+		3.user logoff လုပ္သြားေသာအခါ
+		4.user က shutdown ခ်မိသြားေသာအခါ
+		
+	The addShutdownHook(Thread hook) method
+	Runtime class ရဲ႕ addShutdownHook() method ကို  Virtual Machine နဲ႔ thread ကို register လုပ္ရန္အသံုးၿပဳပါတယ္
+		public void addShutdownHook(Thread hook){}  
+		
+	 static factory method getRuntime() ကို call ၿခင္းက  Runtime class ရဲ႕ object ကို ပါ၀င္ေစႏိုင္တယ္
+	 Runtime r = Runtime.getRuntime();
+	 
+	 Factory method
+	 	class တစ္ခုရဲ႕ instance ကို return ၿပန္လာမယ္ဆိုရင္ factory method လို႔ေခၚတယ္
+	 	
+	 runtime class ရဲ႕ halt(int) method ကို call ၿခင္းက shutdown sequence ကို ရပ္တန္႔ေစႏိုင္တယ္
+*****************************************************************************************************************************	 
+How to perform single task by multiple threads?
+	တကယ္လို႔ task တစ္ခုကို threads အမ်ားၾကီးနဲ႔ လုပ္ေဆာင္ေနရတယ္ဆိုရင္ run method တစ္ခုတည္းနဲ႔ တစ္ခါတည္း run ခ်လိုက္လို႔ရတယ္
+		
+	multitasking in multithreading
+		အဲ့လိုသာဆိုရင္ run method အမ်ားၾကီး ေရးရလိမ့္မယ္
+********************************************************************************************************************************
+ Garbage Collection
+ 	garbage ဆိုတာက unreferenced objects မ်ားကို ဆိုလိုသည္
+ 	 runtime unused memory ကို အလိုအေလ်ာက္ၿပန္လည္ ရယူၿခင္းၿဖစ္တယ္ ေနာက္တစ္မ်ိဳးေၿပာရရင္ အသံုးမၿပဳေသာ objects မ်ားကို ဖ်က္ဆီးၿခင္းလည္းၿဖစ္တယ္
+ 	 အဲ့တာေၾကာင့္ java က ပိုေကာင္းတဲ့ memory management ကိုေပးထားတယ္လို႔ ေၿပာလို႔ရတယ္
+ 	 
+ Advantage of Garbage Collection
+ 	memory ကို သက္သာေစတယ္ ဘာလို႔လဲဆိုေတာ့ garbage collector က unreferenced objects မ်ားကို heap memory ကေန ဖယ္ရွားေပးတယ္
+ 	garbage collector က auto အလုပ္လုပ္တယ္ ဘာလို႔လဲဆိုေတာ့ သူက JVM ရဲ႕ အစိတ္အပိုင္းၿဖစ္တဲ့အတြက္ေၾကာင့္ၿဖစ္တယ္
+ 	
+object ကို unreferenced ၿဖစ္ေအာင္ ဘယ္လိုလုပ္မလဲ
+	1.By nulling a reference:
+		Employee e=new Employee();  
+		e=null;  
+		
+	2. By assigning a reference to another:
+		Employee e1=new Employee();  
+		Employee e2=new Employee();  
+		e1=e2;
+		
+	3.By anonymous object:
+		new Employee();  
+		
+finalize() method
+	object မ်ားကို garbage collected မလုပ္ခင္မွာ finalize() method ကို အရင္ေခၚရတယ္ 
+	အဲ့ method က processing ကို clean လုပ္ေပးတဲ့ method တစ္ခုၿဖစ္တယ္
+	protected void finalize(){}  
+	
+	JVM ရဲ႕ Garbage collector က new keywords ပါတဲ့ method မ်ားကိုသာ collect လုပ္တယ္
+	အဲ့တာေၾကာင့္ new keyword သာ မပါခဲ့ဘူး ၿပီးေတာ့ finalize method ကိုလည္းသံုးခဲ့မယ္ဆိုရင္ အဲ့ method က တစ္ၿခားက်န္တဲ့ objects  မ်ားကို destroy လုပ္သြားလိမ့္မယ္
+	
+	
+	gc() method
+		ဒီ method ကို processing cleanup ၿပဳလုပ္ရန္သံုးပါတယ္
+		ဒီ method ကို System and Runtime classes မ်ားတြင္ ေတြ႕ႏိုင္တယ္
+		public static void gc(){}  
+		
+	 daemon thread က Garbage collection ကို လုပ္ေဆာင္တယ္ အဲ့တာကို Garbage Collector(GC) လို႔ေခၚတယ္
+	 This thread ကို  finalize() method လို႔ေခၚတယ္ object ေတြကို garbage collected မလုပ္ခင္မွာ 
+*******************************************************************************************************************************
+Runtime class
+	Runtime class ကို java runtime environment နဲ႔ အၿပန္အလွန္ အက်ိဳးသက္ေရာက္ရန္ အသံုးၿပဳတယ္
+	Java Runtime class ကဆိုလို႔ရွိရင္ process တစ္ခုကို execute လုပ္ရန္ gc ကို ေခၚရန္ total and free memory မ်ားကို ရယူရန္ methods မ်ားကို ေပးပါတယ္
+	java application တစ္ခုအတြက္ java.lang.Runtime class ရဲ႕ instance တစ္ခုတည္းသာလွ်င္ available ၿဖစ္တယ္
+	Runtime.getRuntime() method က Runtime class ရဲ႕ singleton instance ကို return ၿပန္ေပးပါတယ္
+	
+	Runtime class ရဲ႕ အေရးၾကီးေသာ method မ်ားကို တစ္ခုခ်င္းေရးၿပသြားမယ္
+	1. Runtime exec() method
+		public class Runtime1{  
+ 			public static void main(String args[])throws Exception{  
+		 			 Runtime.getRuntime().exec("notepad");//notepad အသစ္တစ္ခုပြင့္လာလိမ့္မယ္
+			 }  
+		} 
+ 	
+ 	 	windows ရဲ႕ shutdown ကို အလုပ္လုပ္ခိုင္းမယ္ java ကေနတစ္ဆင့္
+ 	 		public class Runtime2{  
+				 public static void main(String args[])throws Exception{  
+				  Runtime.getRuntime().exec("c:\\Windows\\System32\\shutdown -s -t 0");  
+				 }  
+			} 
+	
+		restart ခ်ခ်ရင္ 
+			public class Runtime3{  
+				 public static void main(String args[])throws Exception{  
+				  Runtime.getRuntime().exec("shutdown -r -t 0");  
+				 }  
+				}  
+				
+		Runtime availableProcessors()		
+		public class Runtime4{  
+			 public static void main(String args[])throws Exception{  
+			  System.out.println(Runtime.getRuntime().availableProcessors());  
+			 }  
+			} 
+****************************************************************************************************************************
+Synchronization
+	 synchronication ဆိုတာက 
