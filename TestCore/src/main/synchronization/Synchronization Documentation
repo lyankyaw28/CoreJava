@@ -1,0 +1,73 @@
+Synchronization
+	multiple threads ေတြက any shared resource ကို access လုပ္ႏိုင္စြမ္းကို ထိန္းခ်ဳပ္ထားၿခင္းကို Synchronization လို႔ေခၚတယ္
+	
+Synchronization ဘာလို႔သံုးခ်င္တာလဲ(အေၾကာင္းအရာ ၂ ခုေၾကာင့္ သံုးရၿခင္းၿဖစ္တယ္)
+	၁.thread interference ကို ကာကြယ္ဖို႔ရန္အတြက္
+	၂.consistency problem ကို ကာကြယ္ဖို႔ရန္အတြက္
+	
+Synchronization အမ်ိဳးအစားမ်ား(၂ မ်ိဳးရွိတယ္)
+	၁.process synchronization
+	၂.thread Synchronization
+	ဒီမွာ thread Synchronization အေၾကာင္းပဲေၿပာမယ္
+	
+Thread Synchronization(၂ မ်ိဳးရွိတယ္)
+	၁.mutual exclusive 
+	၂.inter-thread communication
+	
+၁.mutual exclusive
+	mutual exclusive က threads မ်ားကို interfering တစ္ခုကေနတစ္ခု data မ်ားကို share ေနစဥ္မွာထိ္န္းသိမ္းထားေပးတယ္
+	အဲ့လို ထိန္းသိမ္းတာမွာ နည္းလမ္း ၃ မ်ိဳးရွိတယ္
+	၁. synchronized method
+	၂. synchronized block
+	၃. static synchronization
+	
+Concept of Lock 
+	thread တစ္ခုမၿပီးေသးတဲ့အခ်ိန္မွာ share လုပ္ထားတဲ့ resource(object) ကို lock ခ်ထားတဲ့သေဘာကို ဆိုလိုတာၿဖစ္တယ္
+	
+synchronized method
+	ဘယ္ method ကို မဆို synchronized keyword နဲ႔ေရးလိုက္ရင္ synchronized method ၿဖစ္သြားေရာ
+	any shared resource အတြက္ object ကို lock လုပ္ရန္အတြက္ Synchronized method ကို သံုးတယ္
+	thread က synchronized method ကိုလွမ္းေခၚတဲ့အခါ အဲ့ object အတြက္ acquires the lock ကို လုပ္တယ္
+	thread က သူ႕ task  ေတြၿပီးတဲ့အခါ အဲ့တာကို release လုပ္လိုက္တယ္
+********************************************************************************************
+Synchronized block	
+	method တစ္ခုရဲ႕ မည္သည့္ resource ကိုမဆို synchronization လုပ္ေဆာင္ရာမွာ အသံုးၿပဳႏိုင္ပါတယ္
+	synchronized method နဲ႔လုပ္ေဆာင္ခ်က္ကေတာ့ အတူတူပဲ ၿဖစ္တယ္
+********************************************************************************************	
+Static synchronization
+	Static synchronization လုပ္မယ္ဆိုရင္ေတာ့ သူ lock ခ်တာက object ကို မဟုတ္ေတာ့ဘဲနဲ႔ class ၿဖစ္သြားၿပီ
+	(ပံုကိုၾကည့္ပါ)
+	
+static synchronization မရွိရင္ ၿဖစ္ေပၚလာမယ့္ ၿပသနာ
+	object တစ္ခုကို ၿပိဳင္ၿပီး synchronized လုပ္လို႔မရေတာ့တဲ့အခါ static synchronization လုပ္ရလိမ့္မယ္
+********************************************************************************************	
+Dead Lock
+	Dead Lock ဆိုတာက multi threading ရဲ႕အစိတ္အပိုင္းတစ္ခုၿဖစ္တယ္
+	Dead lock ကို ဘယ္လိုအခ်ိန္မွာ ေတြ႕ရလဲဆိုေတာ့ object တစ္ခုကို lock ခ်ေနခ်ိန္ thread က ေစာင့္ဆိုင္းေနရတဲ့အေၿခအေနတစ္ခုမွာ ေတြ႕ရတတ္တယ္
+	ဥပမာ first thread ၿပီးဆံုးသြားလို႔ object lock လုပ္ေဆာင္ေနခ်ိန္မွာ second thread နဲ႔ third thread က ေစာင့္ဆိုင္းေနစဥ္မွာ first thread က dead lock ကို ၿဖစ္ေပၚလာေစတယ္
+********************************************************************************************	
+Inter-thread communication
+	သူက synchronized ၿဖစ္ေနတဲ့ thread ေတြကို တစ္ခုနဲ႔တစ္ခု ဆက္သြယ္လို႔ရေအာင္ လုပ္ေဆာင္ေပးတယ္
+	ဘာေတြဆက္သြယ္လို႔ ရေအာင္လဲဆိုရင္ ဥပမာ thread တစ္ခုက lock ခ်ထားတယ္ဆိုရင္ wait() method ကို သံုးၿပီး တစ္ၿခား thread ေတြကို ေစာင့္ခိုင္းလိုက္တယ္
+	တကယ္လို႔ အဲ့ thread ၿပီးသြားၿပီဆိုရင္ notify() method က တစ္ၿခား thread ေတြကို notify လုပ္လိုက္ရင္ ေနာက္ထပ္ thread တစ္ခုက ဆက္လက္ၿပီး အလုပ္လုပ္လိမ့္မယ္
+
+wait() method နဲ႔ sleep() method ကြာၿခားခ်က္
+	wait method ဆိုတာက lock ခ်တဲ့ method
+	sleep method က lock ခ်တဲ့ method မဟုတ္ဘူး
+	
+	wait method က Object class ၿဖစ္တယ္
+	sleep method က Thread class ၿဖစ္တယ္
+	
+	wait method က non static ၿဖစ္တယ္
+	sleep method က static ၿဖစ္တယ္
+	
+	wait method ၿပည့္မယ့္အခ်ိန္ကို အသိေပးခ်င္ရင္ notify() notifyAll() method တို႔ရွိတယ္
+	sleep method မွာကေတာ့ သူ႕ၿပည့္ခ်င္တဲ့အခ်ိန္ကို parameter အေနနဲ႔ေပးလိုက္ရံုပဲ
+********************************************************************************************		
+Interrupting a Thread
+	thread တစ္ခုက sleeping state သို႔ waiting state တစ္ခုခုကို ေရာက္ေနခဲ့ၿပီး interrupt() method ကိုသြားေခၚခဲ့မယ္ဆိုရင္ InterruptedException ကို throw လုပ္လိမ့္မယ္
+	thread တစ္ခုက sleeping state လဲမဟုတ္ waiting state လည္း မဟုတ္ခဲ့ဘူးဆိုရင္ေတာ့ သူပံုမွန္ behaviour ကို အလုပ္လုပ္ၿပီးေတာ့ thread ကို interrupt flag ကို true ထည့္ေပးသြားလိမ့္မယ္
+	
+	thread class က interrupted method ၃ မ်ိဳးေပးထားတယ္
+	 	
+	
