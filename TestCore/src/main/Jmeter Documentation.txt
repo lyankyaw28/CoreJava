@@ -1,0 +1,114 @@
+﻿JMeter Tutorial
+	JMeter ဆိုတာက web application ရဲ႕ performance ကိုတိုင္းတာတဲ့ open source java application တစ္ခုၿဖစ္တယ္
+	
+Performance Testing
+	*Software performance testing ဆိုတာက non-functional testing ရဲ႕ အမ်ိဳးအစားတစ္ခုၿဖစ္တယ္
+	  application ရဲ႕ performace က ေကာင္းလား ထင္ထားသလိုၿဖစ္လား 
+	  
+	 *performance attributes  အမ်ိဳးမ်ိဳးကို တိုင္းတာၿခင္းလည္း ၿဖစ္တယ္
+	  response time (speed), reliability(ယံုၾကည္စိတ္ခ်လို႔ရသလား), resource usage(ဘယ္ေလာက္သံုးထားလဲ memory and pc , scalability(လုပ္ႏိုင္စြမ္း demand မ်ားလာတာနဲ႔အမွ် 
+	  ဘယ္ေလာက္ manage လုပ္ႏိုင္သလဲ, Stability (condition အမ်ိဳးမ်ိဳးကိုလိုက္ၿပီး ဘယ္ေလာက္တည္ၿငိမ္မွဳရွိသလဲ)
+	  
+What is JMeter?
+	 graphical interface တစ္ခုရွိတဲ့ open source 100% java based application တစ္ခုၿဖစ္တယ္
+	 
+JMeter Installation
+	https://www.javatpoint.com/jmeter-installation အဲ့ link မွာ window နဲ႔ပတ္သက္ၿပီး dowload file ႏွစ္ခုရွိတယ္ အဲ့မွာ အေပၚကတစ္ခု
+	ၿပီးရင္ အဲ့ download ဆြဲထားတဲ့ file ထဲက bin ေအာက္က ApacheJMeter.jar ကို open with မွာ java နဲ႔ဖြင့္ zinp type နဲ႔မဖြင့္နဲ႔
+	
+Build JMeter Test Plan
+step1
+	အဲ့ interface မွာ test plan တစ္ခုပါ၀င္တယ္
+	အဲ့ test plan မွာ test plan name နဲ႔ user defined variables တို႔ပါ၀င္တယ္
+step 2:Add/Remove test plan elements.
+	ေနာက္တစ္ခုက elements မ်ားကို JMeter test plan ကေန ေပါင္းမယ္ ဖယ္မယ္
+	ေပါင္းမယ္ဆိုရင္ right click ႏွိပ္ၿပီး စမ္းမယ္ elements ေတြကို ေရြးႏိုင္တယ္
+	ဖယ္မယ္ဆိုရင္ right click ႏွိပ္ၿပီး  remove လုပ္လိုက္ရံုပဲ
+Step 3: Load and save test plan elements.
+	Tree Element ကို load and save လုပ္မယ္ဆိုရင္ right click ႏွိပ္ၿပီး merge လုပ္ၿပီး .jmx format ႏွိပ္ၿပီး load လုပ္လိုက္ရံုပဲ
+	save လုပ္မယ္ဆိုရင္ right click ႏွိပ္ၿပီး Save Selection As ေရြးၿပီး directory ေရြးလုပ္လိုက္ရံုပဲ
+Step 4: Configuring the tree elements.
+	Thread Group တစ္ခုမွာ ပါ၀င္တဲ့ elements မ်ား
+		နာမည္
+		threads အေရအတြက္(testing လုပ္မယ့္ လူအေရအတြက္)
+		Ramp-up time - user ေတြက thread group ကို  အခ်ိန္ဘယ္ေလာက္ testing စမ္းမလဲ
+		Loop count(test ကို ဘယ္နေခါက္ loop လုပ္မလဲ)
+Step 5: Save JMeter test plan.
+	save or save test plan as ကို ေရြးၿပီး save လုပ္လို႔ရပါမယ္
+Step 6: Run JMeter test plan.
+	runs menu ကေန တစ္ဆင့္ run button နွိပ္ၿပီး run လို႔ရသလို shortcut အေနနဲ႔ Control + r ႏွိပ္ၿပီးလည္း run လို႔ရတယ္
+Step 7: Stop JMeter test plan.
+	runs menu က stop or shutdown လုပ္လို႔ရတယ္
+	Stop (Control + '.')
+	Shutdown (Control + ',')
+Step 8:Check JMeter test plan execution logs.
+	
+		
+JMeter Test Plan Elements(ပါ၀င္တဲ့ elements မ်ား)
+		Test Plan
+		Thread Group
+		Controllers
+		Listeners
+		Timers
+		Configuration Elements
+		Pre-Processor Elements
+		Post-Processor Elements
+		
+Test Plan
+	test plan တစ္ခုဟာ running tests အတြက္ JMeter script လို႔သတ္မွတ္လို႔ရပါတယ္
+	test plan တစ္ခုမွာ test elements မ်ားပါ၀င္တယ္ ဘယ္လို elements မ်ားလဲဆိုေတာ့ thread groups, logic controllers, sample-generating controllers, listeners, timers, assertions, and configuration elements တို႔ၿဖစ္ၾကတယ္
+	test plan တစ္ခုမွာscript မ်ားကို run တဲ့ step အကုန္လံုးကို ဆိုလိုတယ္
+	test plan တစ္ခုက execute လုပ္မယ္ဆိုရင္ sequence ပံုစံ top to bottom နဲ႔သြားတယ္
+
+Test Plan အတြက္ အေရးၾကီးေသာ အခ်က္မ်ား
+	test plan တစ္ခုလံုးကို မ run ခင္မွာ test plan ကို save ထားသင့္တယ္
+	test plan ကို save ရင္  .JMX extension files အေနနဲ႔ save တယ္ အဲ့ format က test ကို အေၿခံထားတဲ့အတြက္ေၾကာင့္text editor ေတြမွာ ဖြင့္လို႔ရတယ္
+	test plan ရဲ႕ အစိတ္အပိုင္းေတြကို different selection အေနနဲ႔ save လို႔ရတယ္ 
+	ဥပမာ HTTP request sampler ကို test fragment အေနနဲ႔ save လုပ္ၿပီးေတာ့ တစ္ၿခား test scenarios မွာ အသံုးၿပဳလို႔ရတယ္
+	
+Thread Group
+	Thread group elements ဆိုတာက မည္သည့္ test plan မဆိုရဲ႕ beginning point ၿဖစ္တယ္
+	thread group က ဘာေတြေပးထားလဲဆိုေတာ့....
+		Set the number of threads.
+		Set the ramp-up period.
+		Set the number of times to execute the test.
+		Scheduler checkbox
+		
+Controllers
+	controller ႏွစ္ခုရွိတယ္
+		Samplers
+		Logical Controllers
+		
+		Samplers
+			samplers ေတြဆိုတာက components ေတြၿဖစ္ၾကတယ္
+			Samplers က jmeter ကို ဘာလုပ္ခိုင္းလိုက္လဲဆိုေတာ့ requests ေတြရဲ႕ specific type မ်ားကို server တစ္ခုဆီ ပို႔လႊတ္တယ္
+			သူက ဘာလုပ္လဲဆိုေတာ့ target server ကို လႊတ္မယ့္ user's request ကို လွည့္ဖ်ားလိုက္တယ္
+			samplers ေတြဆိုတာ test plan မွာ မပါမၿဖစ္ပဲ ဘာၿဖစ္လို႔လဲဆိုေတာ့ server တစ္ခုကို ပို႔လႊတ္လိုက္တဲ့ request ေတြက ဘာအမ်ိဳးအစား request ၿဖစ္မလဲဆိုတာကို JMeter ကိုသိေစတယ္
+			HTTP, HTTP(s), FTP, TCP, SMTP, SOAP အစရွိသၿဖင့္ေပါ့
+			 
+			Thread Group>Add>Sampler> samplers အမ်ားၾကီးရွိတယ္
+			
+	Logical Controllers
+		Logic Controllers ကူညီတယ္
+		ဘာကူညီလဲဆိုေတာ့ thread တစ္ခုထဲမွာ samplers မ်ားရဲ႕ flow of processing order ကို ထိန္းခ်ဳပ္ဖို႔အတြက္ၿဖစ္တယ္
+		Thread Group>Add>Logic Controller>Controller မ်ားစြာရွိတယ္
+
+	Listeners
+		Performance testing ဆိုတာက 
+		form အမ်ိဳးမ်ိဳးထဲမွာ server responses မ်ားကို ခြဲၿခားစိပ္ၿဖာၿခင္းၿဖစ္တယ္ ၿပီးေတာ့ client ကို တူညီေၾကာင္းတင္ၿပတယ္
+		data စုတာရဲ႕ pictorial representation ကို listeners က ေပးပါတယ္ အဲ့ test case ကို jmeter ရဲ႕ sampler component အၿဖစ္ execute လုပ္ပါတယ္
+		table ရဲ႕ form, graph ရဲ႕ form, three ရဲ႕ form  or log file ထဲမွာ ရွိတဲ့ simple text ထဲမွာ ရွိတဲ့ samplers result မ်ားကို userမ်ားအား ၿပသရန္ listener က လုပ္ေဆာင္ပါတယ္
+		listener ၁၅ ခုရွိတယ္ ဒါေပမယ့္ ၃ ခုပဲ မ်ားေသာအားၿဖင့္ သံုးတယ္
+		
+	Timers
+		website or app တစ္ခုခုကို လုပ္ေဆာင္ေနေသာအခါ pauses and delays ဆိုတဲ့ function ေတြ auto ပါၿပီးသားပါ
+		Timers က သူတို႔ကို တြက္ခ်က္ေပးတယ္
+		sampler/request တစ္ခုခ်င္းစီၾကားမွာ jmeter က မည္သည့္ delay functionကိုမွ မလုပ္ေဆာင္ပဲ requests မ်ားကို ပို႔လႊတ္တယ္
+		တကယ္တန္းက်ေတာ့ timer ထည့္ရတဲ့ ရည္ရြယ္ခ်က္က request တစ္ခုခ်င္းစီတိုင္းအတြက္ ဘယ္ေလာက္ေစာင့္ရမလဲဆိုတာကို limit လုပ္ခ်င္တဲ့အတြက္ေၾကာင့္ၿဖစ္တယ္
+		
+		
+		
+	
+	
+ 
+	
