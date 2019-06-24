@@ -107,8 +107,87 @@ Controllers
 		တကယ္တန္းက်ေတာ့ timer ထည့္ရတဲ့ ရည္ရြယ္ခ်က္က request တစ္ခုခ်င္းစီတိုင္းအတြက္ ဘယ္ေလာက္ေစာင့္ရမလဲဆိုတာကို limit လုပ္ခ်င္တဲ့အတြက္ေၾကာင့္ၿဖစ္တယ္
 		
 		
-		
+Configuration Elements
+	Configuration Elements မ်ားရဲ႕ အလုပ္လုပ္တဲ့ပံုစံက samplers ေတြနဲ႔သြားတူတယ္
+	သို႔ေသာ္ သူက request ေတာ့ မပို႔ႏိုင္ဘူး ဒါေပမယ့္ request ေတြကိုေတာ့ modify လုပ္ႏိုင္တယ္
 	
+	configuration elements တစ္ခုဆိုတာက  simple element တစ္ခုၿဖစ္ၿပီးေတာ့ samplers မ်ားရဲ႕ corporate configuration values မ်ားကို စုေဆာင္းႏိုင္တယ္
+	webserver's hostname သို႔မဟုတ္ database url မ်ားကဲ့သို႔
 	
- 
+	configuration element တစ္ခုဟာ branch တစ္ခုရဲ႕ အတြင္းထဲကသာလွ်င္ access လုပ္ႏိုင္တယ္ အဲ့ေနရာမွာ element ေတြကိုထားတယ္
 	
+	အသံုးမ်ားတဲ့ configuration element ေတြကေတာ့
+		Java Request Defaults
+		LDAP Request Defaults
+		LDAP Extended Request Defaults
+		Keystore Configuration
+		JDBC Connection Configuration
+		Login Config Element
+		CSV Data Set Config
+		FTP Request Defaults
+		TCP Sampler Config
+		User Defined Variables
+		HTTP Authorization Manager
+		HTTP Cache Manager
+		HTTP Cookie Manager
+		HTTP Proxy Server
+		HTTP Request Defaults
+		HTTP Header Manager
+		Simple Config Element
+		Random Variable
+	
+	Thread Group>Add>Config Element>
+	
+Pre-processor Elements
+	sampler က request မ်ားကို မလုပ္ခင္မွာ Pre-Processor element ကို execute လုပ္ပါတယ္
+	sampler element တစ္ခုသို႔ Pre-processor တစ္ခုက attached လုပ္ၿခင္းခံရတယ္ အဲ့ေနာက္
+	 Pre-processor က execute လုပ္လိမ့္မယ္ sampler က running လုပ္ေနခ်ိန္မွာ
+	 sample request တစ္ခုရဲ႕ setting ကို modify လုပ္ဖို႔အတြက္ pre-processor ကို သံုးပါတယ္
+	 
+	 အသံုးမ်ားတဲ့ pre-processor elements မ်ားကေတာ့
+	 JDBC Pre-processor
+	JSR223 Pre-processor
+	RegEx User Parameters
+	BeanShell Pre-processor
+	BSF Pre-processor
+	HTML Link Parser
+	HTTP URL Re-writing Modifier
+	HTTP User Parameter Modifier
+	User Parameters
+	
+	add>pre-processors>
+	
+Post-processor Elements
+	fdsafdsafdsafsafdsafsadfsdfdsaf
+*********************************************************************************************
+jmeter functions
+	jmeter functions မ်ားကို special values မ်ားကို ေခၚႏိုင္ေသးတယ္
+	functions မ်ားက မည္သည့္ sample သို႔  တစ္ၿခား element တို႔ ရဲ႕ fields မ်ားကို populate ၿဖစ္ႏိုင္တယ္
+	
+	Syntax of a function in JMeter
+	
+JMeter Test Plan တစ္ခုဖန္တီးၿခင္း
+	 JMeterbin folder ကို ဖြင့္ Apache JMeter ".jar" file ကိုဖြင့္
+	 test plan node ကို select လုပ္ ၿပီးေတာ့ select လုပ္ထားတဲ့ test plan ေပၚမွာ right click ႏွိပ္
+	 right click ႏွိပ္လိုက္ရင္ add ေပၚလာလိမ့္မယ္
+	 Threads (Users) > Thread Group ကိုေရြးလိုက္
+	 Thread Group 1 လို႔ rename လုပ္လိုက္
+	 
+Sampler တစ္ခုေပါင္းထည့္ၿခင္း
+	Thread Group တစ္ခုထဲမွာ HTTP request sampler တစ္ခုကို ေပါင္းထည့္ရမယ္
+	thread group ကို right click ႏွိပ္ၿပီး sampler > HTTP request ေရြးရမယ္
+	HTTp request မွာ elements 4 မ်ိဳးရွိတယ္
+		Name - HTTP Request Sampler 1.
+		Server Name or IP - In our case, web server name will be www.javatpoint.com.
+		Protocol - This field is left unaltered.
+		Path - We will write it as "/" (slash). It indicates that we want the root page of the server.
+
+	အဲ့ thread goup ကို ၃ copy ကူးၿပီး paste လုပ္လို႔ရတယ္
+	name ေတာ့ ေၿပာင္းရမယ္
+	
+Listener ေပါင္းထည့္ၿခင္း
+	text plan ကိုု right click ႏွိပ္ၿပီး Listener>Summary Report
+	
+Save and Execute Test Plan
+	
+		 
